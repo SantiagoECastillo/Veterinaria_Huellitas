@@ -1,7 +1,13 @@
+import Profesionales from "../../components/profesionales/Profesionales"
+
+
+
 const PaginaPrincipal = () => {
-    return (
+    
+  return (
       <>
-      <h1>pagina principal</h1>
+      <h1>Página principal</h1>
+      <Profesionales />
       </>
     )
   }
