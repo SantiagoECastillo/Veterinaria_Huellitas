@@ -1,14 +1,16 @@
+import Carrusel from "../../components/carrusel/Carrusel"
 import Planes from "../../components/planes/Planes"
 import Profesionales from "../../components/profesionales/Profesionales"
 
 
 
 const PaginaPrincipal = () => {
-    
+
   return (
-      <>
+    <>
       <h1>Página principal</h1>
       <h2>Carousel con fotos de veterinarios</h2>
+      <Carrusel/>
       <h2>Descripcion</h2>
       <p>"Somos una clínica veterinaria dedicada a proporcionar cuidados excepcionales para tus mascotas. Nuestro equipo altamente capacitado ofrece servicios médicos avanzados en instalaciones modernas. Desde exámenes preventivos hasta tratamientos especializados, cuidamos de tus animales con amor y experiencia. Confía en nosotros para mantener a tus mascotas saludables y felices."</p>
       <button>TURNOS</button>
@@ -18,8 +20,8 @@ const PaginaPrincipal = () => {
       <h2>Nuestros planes</h2>
       <Planes />
       <h2>Referencias</h2>
-      </>
-    )
-  }
-  
-  export default PaginaPrincipal
+    </>
+  )
+}
+
+export default PaginaPrincipal
