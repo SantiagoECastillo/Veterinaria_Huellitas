@@ -19,6 +19,7 @@ const PaginaPrincipal = () => {
       <Profesionales />
       <h2>Nuestros planes</h2>
       <Planes />
+      <button>Ver planes</button>
       <h2>Referencias</h2>
     </>
   )

@@ -5,11 +5,11 @@ import Accordion from 'react-bootstrap/Accordion';
 
 function Planes() {
   return (
-    <Accordion defaultActiveKey="0" flush>
+    <Accordion> 
       <Accordion.Item eventKey="0">
         <Accordion.Header>Plan Básico</Accordion.Header>
         <Accordion.Body>
-        Ofrece servicios esenciales como exámenes anuales, vacunas y desparasitación para el cuidado fundamental de tu mascota..
+        Ofrece servicios esenciales como exámenes anuales, vacunas y desparasitación para el cuidado fundamental de tu mascota.
         </Accordion.Body>
       </Accordion.Item>
       <Accordion.Item eventKey="1">
