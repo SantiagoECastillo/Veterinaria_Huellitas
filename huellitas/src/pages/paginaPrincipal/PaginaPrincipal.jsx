@@ -1,6 +1,7 @@
 import Carrusel from "../../components/carrusel/Carrusel"
 import Planes from "../../components/planes/Planes"
 import Profesionales from "../../components/profesionales/Profesionales"
+import Slider from "../../components/slider/slider"
 
 
 
@@ -20,6 +21,7 @@ const PaginaPrincipal = () => {
       <h2>Nuestros planes</h2>
       <Planes />
       <button>Ver planes</button>
+      <Slider />
       <h2>Referencias</h2>
     </>
   )
