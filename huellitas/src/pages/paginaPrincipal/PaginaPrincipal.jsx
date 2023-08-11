@@ -5,6 +5,7 @@ import Servicios from "../../components/servicios/servicios";
 import Slider from "../../components/slider/slider"
 import Button from 'react-bootstrap/Button';
 import './PaginaPrincipal.css'
+import Comentarios from "../../components/comentarios/Comentarios";
 
 
 
@@ -23,6 +24,7 @@ const PaginaPrincipal = () => {
       <Planes />
       <Slider />
       <h2>Referencias</h2>
+      <Comentarios />
     </>
   )
 }
