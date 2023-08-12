@@ -23,7 +23,7 @@ const ModalLogin = ({show, handleClose}) => {
 
   return (
     <> 
-        <Modal show={show} onHide={handleClose} className='colorFondoModal'>
+        <Modal show={show} onHide={handleClose}>
           <div className='colorFondoModal'>
           <Modal.Header className='border-bottom-0' closeButton>
           </Modal.Header>
@@ -37,26 +37,17 @@ const ModalLogin = ({show, handleClose}) => {
           <Modal.Body className='px-5'>
             <form>
               <div className='mb-3 input-group'>
-                <div className='input-group-text bg-info'>
+                <div className='input-group-text bg-info '>
                   <img src={imgUsuarioLogin} alt="" className='imagenInputFormulario'/>
-                  <input type='text' className='form-control' placeholder='Correo' />
                 </div>
+                <input type='text' className='form-control' placeholder='Correo' />
               </div>
               <div className='mb-3 input-group'>
                 <div className='input-group-text bg-info'>
                   <img src={imgContraseñaLogin} alt="" className='imagenInputFormulario'/>
-                  <input type='password' className='form-control' placeholder='Contraseña' />
                 </div>
+                <input type='password' className='form-control' placeholder='Contraseña' />
               </div>
-
-              <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-              <img src={imgContraseñaLogin} alt="" className='imagenInputFormulario'/>
-              <Form.Control
-                type="email"
-                placeholder="name@example.com"
-                autoFocus
-              />
-              </Form.Group>
             </form>  
           </Modal.Body>
           <div className='d-flex flex-column justify-content-center px-5'>
