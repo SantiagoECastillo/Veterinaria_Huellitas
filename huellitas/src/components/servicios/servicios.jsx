@@ -1,8 +1,15 @@
 import './servicios.css'
-const Servicios = () =>{
-    return(
+import Button from 'react-bootstrap/Button';
+const Servicios = () => {
+    return (
         <>
-        <h1 className='tituloServicios'>Nuestros Servicios</h1>
+            <div className='contenedorPrincipal'>
+
+                <h1 className='tituloServicios'>Nuestros Servicios</h1>
+                <Button className='botonTurno' variant="primary" size="lg"> Solicitar Turno </Button>
+
+            </div>
+
         </>
     )
 }

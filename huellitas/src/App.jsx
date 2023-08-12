@@ -1,6 +1,5 @@
 import './App.css'
-import PaginaPrincipal from './pages/paginaPrincipal/paginaPrincipal'
-
+import PaginaPrincipal from './pages/paginaPrincipal/paginaPrincipal';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
