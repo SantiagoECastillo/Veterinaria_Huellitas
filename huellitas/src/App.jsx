@@ -4,7 +4,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 
-// Aqui empieza el codigo
 
 const App = () => {
   return (
