@@ -1,3 +1,10 @@
+.conteinerText{
+  background-color: #f4f4f4;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 15px;
+}
 .descripcion {
     text-align: center;
     font-size: 18px;
@@ -6,36 +13,14 @@
     line-height: 1.6;
   }
   
-  .descripcion::before {
-    content: open-quote;
-    font-size: 36px;
-    margin-right: 10px;
-  }
-  
-  .descripcion::after {
-    content: close-quote;
-    font-size: 36px;
-    margin-left: 10px;
-  }
-  
   .descripcion strong {
     display: block;
     margin-top: 20px;
     font-size: 24px;
-    color: #5391d3;
+    color: #0d8392;
   }
   
   .descripcion em {
     font-style: italic;
     color: #4acaea;
-  }
-  
-  .descripcion a {
-    color: #007bff;
-    text-decoration: none;
-    transition: color 0.3s ease-in-out;
-  }
-  
-  .descripcion a:hover {
-    color: #0056b3;
   }
