@@ -1,12 +1,13 @@
 import {Modal} from 'react-bootstrap';
-import ModalRegistro from '../Registro/ModalRegistro';
 import { useContext, useState } from 'react';
+import { UsuarioContexto } from '../../Context/UsuariosContexto';
+import ModalRegistro from '../Registro/ModalRegistro';
 import gatoLogin from '../../imagenes/Gato-login.svg';
 import perroLoginn from '../../imagenes/Perro-img-login.svg';
 import imgUsuarioLogin from '../../imagenes/username-icon.svg'
 import imgContraseñaLogin from '../../imagenes/password-icon.svg'
 import './ModalLogin.css';
-import { UsuarioContexto } from '../../Context/UsuariosContexto';
+
 
 
 const ModalLogin = ({show, handleClose}) => {
@@ -18,7 +19,7 @@ const ModalLogin = ({show, handleClose}) => {
   const handleSubmit = (evento) => {
     evento.preventDefault()
     try {
-      const usuario = usuarios.find(usuario => usuario.correo === correo && usuario.contrasenia === contrasenia)
+      const usuario = usuarios.find(usuario => usuario.correo === correo && usuario.contrasena === contrasenia)
       if(usuario){
         alert("usuario encontrado");
         localStorage.setItem("usuario", JSON.stringify(usuario))
@@ -56,28 +57,28 @@ const ModalLogin = ({show, handleClose}) => {
             <h2 className='text-center mt-3'>Iniciar Sesión</h2>
           </div>
           <Modal.Body className='px-5'>
-            <form>
+            <form onSubmit={handleSubmit}>
               <div className='mb-3 input-group'>
                 <div className='input-group-text bg-info '>
                   <img src={imgUsuarioLogin} alt="" className='imagenInputFormulario'/>
                 </div>
                 <input type='email' className='form-control' name='email' aria-describedby='emanil' placeholder='Ingrese su correo' 
-                  onChange={(evento) => setCorreo(e.target.value)} value={correo}
+                  onChange={(evento) => setCorreo(evento.target.value)} value={correo}
                 />
               </div>
               <div className='mb-3 input-group'>
                 <div className='input-group-text bg-info'>
                   <img src={imgContraseñaLogin} alt="" className='imagenInputFormulario'/>
                 </div>
-                <input type='password' className='form-control' name='contrasenia' aria-describedby='contrasenia' placeholder='Ingrese su contraseña'  
-                  onChange={(evento) => setcontrasenia(e.target.value)} value={contrasenia}
+                <input type='password' className='form-control' name='contrasena' aria-describedby='contrasena' placeholder='Ingrese su contraseña'  
+                  onChange={(evento) => setcontrasenia(evento.target.value)} value={contrasenia}
                 />
+              </div>
+              <div className='d-flex flex-column justify-content-center mt-2'>
+                <button type='submit' className='btn btn-info mb-2 text-white'>Iniciar Sesión</button>
               </div>
             </form>  
           </Modal.Body>
-          <div className='d-flex flex-column justify-content-center px-5'>
-            <button type='submit' className='btn btn-info mb-2 text-white'>Iniciar Sesión</button>
-          </div>
           <div className='d-flex gap-1 justify-content-center my-3'>
             <p>¿No tienes cuenta aun?</p>
             <a href='#' className='text-decoration-none fw-bold' onClick={() => Reg()}>Crear cuenta</a> {/*Logra cerrar el from, ver si puede abrir otro */}
