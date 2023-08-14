@@ -1,14 +1,35 @@
-import {Modal, Form} from 'react-bootstrap';
+import {Modal} from 'react-bootstrap';
 import ModalRegistro from '../Registro/ModalRegistro';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import gatoLogin from '../../imagenes/Gato-login.svg';
 import perroLoginn from '../../imagenes/Perro-img-login.svg';
 import imgUsuarioLogin from '../../imagenes/username-icon.svg'
 import imgContraseñaLogin from '../../imagenes/password-icon.svg'
 import './ModalLogin.css';
+import { UsuariosContexto } from '../Context/UsuariosContexto';
 
 
 const ModalLogin = ({show, handleClose}) => {
+  const [correo, setCorreo] = useState();
+  const [contrasenia, setcontrasenia] = useState();
+
+  const {usuarios} = useContext(UsuariosContexto)
+
+  const handleSubmit = (evento) => {
+    evento.preventDefault()
+    try {
+      const usuario = usuarios.find(usuario => usuario.correo === correo && usuario.contrasenia === contrasenia)
+      if(usuario){
+        alert("usuario encontrado");
+        localStorage.setItem("usuario", JSON.stringify(usuario))
+        window.location.href = "/"; /*aqui colocamos la redireccion que se hara una vez que ingrese el usuario, hay que agregar en el path */
+      }else{
+        alert("usuario NO encontrado");
+      }
+    } catch (error) {
+      console.log(error)
+    }
+  }
 
   /*LLamda al modal de registro*/
   const [showReg, setShow] = useState(false);
@@ -40,13 +61,17 @@ const ModalLogin = ({show, handleClose}) => {
                 <div className='input-group-text bg-info '>
                   <img src={imgUsuarioLogin} alt="" className='imagenInputFormulario'/>
                 </div>
-                <input type='text' className='form-control' placeholder='Correo' />
+                <input type='email' className='form-control' name='email' aria-describedby='emanil' placeholder='Ingrese su correo' 
+                  onChange={(evento) => setCorreo(e.target.value)} value={correo}
+                />
               </div>
               <div className='mb-3 input-group'>
                 <div className='input-group-text bg-info'>
                   <img src={imgContraseñaLogin} alt="" className='imagenInputFormulario'/>
                 </div>
-                <input type='password' className='form-control' placeholder='Contraseña' />
+                <input type='password' className='form-control' name='contrasenia' aria-describedby='contrasenia' placeholder='Ingrese su contraseña'  
+                  onChange={(evento) => setcontrasenia(e.target.value)} value={contrasenia}
+                />
               </div>
             </form>  
           </Modal.Body>
