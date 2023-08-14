@@ -6,14 +6,14 @@ import perroLoginn from '../../imagenes/Perro-img-login.svg';
 import imgUsuarioLogin from '../../imagenes/username-icon.svg'
 import imgContraseñaLogin from '../../imagenes/password-icon.svg'
 import './ModalLogin.css';
-import { UsuariosContexto } from '../Context/UsuariosContexto';
+import { UsuarioContexto } from '../../Context/UsuariosContexto';
 
 
 const ModalLogin = ({show, handleClose}) => {
   const [correo, setCorreo] = useState();
   const [contrasenia, setcontrasenia] = useState();
 
-  const {usuarios} = useContext(UsuariosContexto)
+  const {usuarios} = useContext(UsuarioContexto)
 
   const handleSubmit = (evento) => {
     evento.preventDefault()

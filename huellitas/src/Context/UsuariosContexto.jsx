@@ -1,15 +1,15 @@
 import { createContext, useEffect, useState } from "react";
 import axios from "axios";
-export const UsuariosContexto = createContext(); 
+export const UsuarioContexto = createContext(); 
 
-const UserContext = ({children}) => {
+const UsuariosContexto = ({children}) => {
     const[usuarios, setUsuarios] = useState()
 
     const getUser = async () => {
         try {
-            /*const response = await axios.get("http://localhost:8080/users")*/
+            const response = await axios.get("http://localhost:3000/usuarios")
             console.log(response.data)
-            setUsers(response.data) 
+            setUsuarios(response.data) 
         } catch (error) {
             console.log(error)
         }
@@ -25,10 +25,10 @@ const UserContext = ({children}) => {
     }, [])
 
     return (
-        <UsuariosContexto.Provider value={{usuarios, setUsuarios, logOut}}> 
+        <UsuarioContexto.Provider value={{usuarios, setUsuarios, logOut}}> 
           {children}  
-        </UsuariosContexto.Provider>
+        </UsuarioContexto.Provider>
     );
 }
 
-export default UserContext;
+export default UsuariosContexto;

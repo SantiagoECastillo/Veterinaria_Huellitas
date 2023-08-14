@@ -1,0 +1,12 @@
+{
+  "usuarios": [
+    {
+      "nombre": "sanitago",
+      "apellido": "castillo",
+      "correo": "s@gmail.com",
+      "contrasena": "123",
+      "telefono": "12345",
+      "id": 1
+    }
+  ]
+}
