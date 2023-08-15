@@ -5,7 +5,7 @@ import Servicios from "../../components/servicios/servicios";
 import Slider from "../../components/slider/slider";
 import './PaginaPrincipal.css'
 import Comentarios from "../../components/comentarios/Comentarios";
-import Productos from "../../components/productos/Productos";
+
 
 
 
@@ -25,7 +25,8 @@ const PaginaPrincipal = () => {
       <Profesionales />
       <Planes />
       <h2>Algunos de nuestros productos</h2>
-      <Productos/>
+      
+      
       <Slider />
       <h2>Referencias</h2>
       <Comentarios />

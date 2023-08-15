@@ -9,12 +9,12 @@ const App = () => {
   return (
     <>
 
-      <Router>
+      {/* <Router>
         <Routes>
           <Route exact path='/' element={<PaginaPrincipal />} />
           <Route path="/" element={<Planes />} />
         </Routes>
-      </Router>
+      </Router> */}
 
       <PaginaPrincipal />
 

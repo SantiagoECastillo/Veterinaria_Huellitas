@@ -1,9 +1,14 @@
-import "./productos.css"
+// import { useContext } from "react";
+// import { ProductosContext } from "../context/ProductosContext";
 
-const Productos = ()=>{
-    return(
-        <>
-        </>
-    )
-}
-export default Productos
+// const Productos =() => {
+//     const {productos} = useContext(ProductosContext)
+
+//     console.log(productos)
+//     return(
+//         <>
+//         </>
+//     )
+// }
+
+// export default Productos
