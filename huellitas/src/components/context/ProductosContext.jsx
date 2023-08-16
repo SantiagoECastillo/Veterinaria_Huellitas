@@ -1,21 +1,22 @@
-// import "./productos.css"
-// import { createContext, useState } from "react"
+import { createContext, useState } from "react"
 
-// export const ProductosContext = createContext()
+export const ProductosContexto = createContext()
 
-// const productoHardcodeado = {
-//     marca:"Royal Canin",
-//     tipo:"alimento",
-//     precio:30000,
-// }
 
-// const ProductosContext = ({ children }) => {
-//     const {productos, setProductos} = useState(productoHardcodeado)
-    
-//     return (
-//         <ProductosContext.Provider value={{productos, setProductos}}>
-//             {children}
-//         </ProductosContext.Provider>
-//     )
-// }
-// export default ProductosContext
+
+const ProductosContext = ({ children }) => {
+    // const productoHardcodeado = {
+    //     marca: "Royal Canin",
+    //     tipo: "alimento",
+    //     precio: 30000,
+    // }
+
+    const [productos, setProductos] = useState("ganó mileidi")
+
+    return (
+        <ProductosContexto.Provider value={{ productos, setProductos }}>
+            {children}
+        </ProductosContexto.Provider>
+    )
+}
+export default ProductosContext

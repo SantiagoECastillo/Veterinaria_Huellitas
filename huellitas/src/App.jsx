@@ -1,4 +1,6 @@
 import './App.css'
+import ProductosContexto from './components/context/ProductosContext';
+import Productos from './components/productos/Productos';
 import PaginaPrincipal from './pages/paginaPrincipal/paginaPrincipal';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -15,8 +17,12 @@ const App = () => {
           <Route path="/" element={<Planes />} />
         </Routes>
       </Router> */}
-
-      <PaginaPrincipal />
+{/* 
+      <PaginaPrincipal /> */}
+      
+      <ProductosContexto>
+        <Productos />
+      </ProductosContexto>
 
     </>
   )
