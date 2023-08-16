@@ -18,7 +18,7 @@ function Error404() {
               We're SOrry, the page ty reuquest could not be found please go
               back to the homepage
             </p>
-            <buttom className="btn btn-sz-primary">Go Home</buttom>
+            <buttom className="btn btn-sz-primary">Inicio</buttom>
           </div>
         </div>
 
