@@ -19,13 +19,59 @@ function About() {
 
       {/* Contenedor 2 */}
       <div className="container d-flex flex-wrap justify-content-center">
-        <div className="d-flex mx-5 my-4">
+        <div className="d-flex mx-4 my-4">
+          
           <div className="card fach cambiocolor" style={{ width: '20rem', height: '23rem' }}>
-            {/* Contenido aquí */}
+            asdasd
           </div>
-        </div>
-        {/* Repite la estructura para otros perfiles */}
+       </div>
+
+       <div className="d-flex mx-5 my-4">
+          
+          <div className="card fach cambiocolor" style={{ width: '20rem', height: '23rem' }}>
+            asdasd
+          </div>
+       </div>
+
+       <div className="d-flex mx-4 my-4">
+          
+          <div className="card fach cambiocolor" style={{ width: '20rem', height: '23rem' }}>
+            asdasd
+          </div>
+       </div>
       </div>
+
+      
+      
+      
+      
+      
+      
+      
+      <div className="container d-flex flex-wrap justify-content-center">
+        <div className="d-flex mx-5 my-4">
+          
+          <div className="card fach cambiocolor" style={{ width: '20rem', height: '23rem' }}>
+            asdasd
+          </div>
+
+  
+          
+        </div>
+
+        <div className="d-flex mx-5 my-4">
+          
+          <div className="card fach cambiocolor" style={{ width: '20rem', height: '23rem' }}>
+            asdasd
+          </div>
+
+  
+          
+        </div>
+      </div>
+
+        
+  
       {/* Fin de Contenedor 2 */}
     </>
   );
