@@ -1,18 +1,20 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
-import './index.css'
-import Navbar from './src/components/Navbar.jsx'; // Ruta correcta a tu archivo Navbar.jsx
-import Footer from './src/components/Footer.jsx'; // Ruta correcta a tu archivo Footer.jsx
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import Navbar from './components/navbar';
+import Footer from './components/footer';
 
-const App = () => {
-    return (
-        <div>
-            <Navbar />
-            {/* Aquí puedes agregar otros componentes y contenido de tu aplicación */}
-            <Footer />
-        </div>
-    );
+const MainApp = () => {
+  return (
+    <div>
+      <Navbar />
+      <Footer />
+    </div>
+  );
 };
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    <MainApp />
+  </React.StrictMode>
+);
