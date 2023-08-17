@@ -96,7 +96,7 @@ const Navbar = () => {
                         data-bs-toggle="modal"
                         data-bs-target="#myModal"
                     >
-                        Iniciar sesión o Registrarse
+                        Iniciar sesión
                     </button>
                 </div>
             </div>
