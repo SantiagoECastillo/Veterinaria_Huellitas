@@ -1,10 +1,12 @@
-.asd{
+.colorFondo{
     background-color: #feecd4;
 }
 
 .main-img{
-    padding-top: 20% ;
+    padding-top: 10% ;
+    
 }
+ 
 
 .main-description{
     font-size: 14px;
@@ -19,3 +21,8 @@
     background-color: #34d796 !important;
 
 }
+
+
+
+
+
