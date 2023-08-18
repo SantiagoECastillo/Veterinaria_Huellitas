@@ -1,4 +1,5 @@
 import React from 'react';
+import FooterLogo from '../../../public/images/FooterLogo.jpg';
 
 const Footer = () => {
     return (
@@ -6,7 +7,7 @@ const Footer = () => {
             <div className="row">
                 {/* Columna 1: Logo y Redes Sociales */}
                 <div className="col-lg-4 text-center mb-4 p-3">
-                    <img src="tu-logo.png" alt="Logo" className="img-fluid" />
+                    <img src={FooterLogo} alt="Logo" className="img-fluid w-50" />
                     <div className="mt-3">
                         <a href="#" className="btn btn-sm btn-primary btn-social">
                             <i className="fab fa-facebook"></i>
