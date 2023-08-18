@@ -11,12 +11,12 @@ function Error404() {
             </div>
 
             <div className="col-12 col-sm-12 col-md-12 col-lg-6">
-              <div className="main-img text-center mt-5">
+              <div className="main-img text-center mt-5 tamanoCont">
                 
                 <img
                   src="/src/images/error404.jpg"
                   alt="perro"
-                  className="img-fluid "
+                  className="img-fluid"
                 />
                 <h1>Pagina no encontrada</h1>
                 <p className="main-description pt-2">
