@@ -1,5 +1,7 @@
 import React from 'react';
 import FooterLogo from '../../../public/images/FooterLogo.jpg';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // Ajusta la ruta
+import { faFacebook, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons'; // Ajusta la ruta
 
 const Footer = () => {
     return (
@@ -9,14 +11,14 @@ const Footer = () => {
                 <div className="col-lg-4 text-center mb-4 p-3">
                     <img src={FooterLogo} alt="Logo" className="img-fluid w-50" />
                     <div className="mt-3">
-                        <a href="#" className="btn btn-sm btn-primary btn-social">
-                            <i className="fab fa-facebook"></i>
+                    <a href="#" className="btn btn-sm btn-primary btn-social">
+                    <FontAwesomeIcon icon={faFacebook} />
                         </a>
                         <a href="#" className="btn btn-sm btn-info btn-social">
-                            <i className="fab fa-twitter"></i>
+                            <FontAwesomeIcon icon={faTwitter} />
                         </a>
                         <a href="#" className="btn btn-sm btn-danger btn-social">
-                            <i className="fab fa-instagram"></i>
+                            <FontAwesomeIcon icon={faInstagram} />
                         </a>
                     </div>
                 </div>
