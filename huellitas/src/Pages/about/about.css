@@ -6,9 +6,11 @@
     background-color: rgba(120, 119, 123, 0.3);
     font-weight: bold;
     border-radius: 0.5em;
-    box-shadow: inset 1px 1px 22px 4px rgba(0,0,0,0.85)
+    box-shadow: inset 1px 1px 22px 4px rgba(0,0,0,0.85);
+    
+    }
 
-}
+
 
 
 .colorfondo i{
@@ -31,7 +33,19 @@ h1{
     line-height: 2em;
 }
 
+
+
+.cambiocolor p{
+    display: none;
+}
+
 .cambiocolor:hover{
     background: rgba(11,103,123,0.6);
     transition: all 500ms ease-out;
+    transform: translatey(-1%);
+    
+}
+
+.cambiocolor:hover p{
+    display: block;
 }
