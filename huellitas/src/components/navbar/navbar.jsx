@@ -1,9 +1,11 @@
 import React from 'react';
+import NavbarLogo from '../../images/NavbarLogo.jpg'
+import './navbar.css'; 
 
 const Navbar = () => {
     return (
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div className="container">
+        <nav className="navbar navbar-expand-lg ">
+            <div className="container mx-auto m-2 ">
                 <button
                     className="navbar-toggler"
                     type="button"
@@ -16,9 +18,9 @@ const Navbar = () => {
                     <span className="navbar-toggler-icon"></span>
                 </button>
 
-                <div className="collapse navbar-collapse col-lg-4 text-center" id="navbarNav">
+                <div className="collapse navbar-collapse col-lg-4 text-center mt-1" id="navbarNav">
                     <ul className="navbar-nav">
-                        <li className="nav-item dropdown">
+                        <li className="nav-item dropdown ">
                             <a
                                 className="nav-link dropdown-toggle"
                                 href="#"
@@ -27,21 +29,21 @@ const Navbar = () => {
                                 data-bs-toggle="dropdown"
                                 aria-expanded="false"
                             >
-                                Tienda
+                                TIENDA
                             </a>
                             <ul className="dropdown-menu" aria-labelledby="dropdown1">
                                 <li>
-                                    <a className="dropdown-item" href="#">
+                                    <a className="dropdown-item text-center" href="#">
                                         Categoría 1
                                     </a>
                                 </li>
                                 <li>
-                                    <a className="dropdown-item" href="#">
+                                    <a className="dropdown-item text-center" href="#">
                                         Categoría 2
                                     </a>
                                 </li>
                                 <li>
-                                    <a className="dropdown-item" href="#">
+                                    <a className="dropdown-item text-center" href="#">
                                         Categoría 3
                                     </a>
                                 </li>
@@ -56,21 +58,21 @@ const Navbar = () => {
                                 data-bs-toggle="dropdown"
                                 aria-expanded="false"
                             >
-                                Servicios
+                                SERVICIOS
                             </a>
                             <ul className="dropdown-menu" aria-labelledby="dropdown2">
                                 <li>
-                                    <a className="dropdown-item" href="#">
+                                    <a className="dropdown-item text-center" href="#">
                                         Servicio 1
                                     </a>
                                 </li>
                                 <li>
-                                    <a className="dropdown-item" href="#">
+                                    <a className="dropdown-item text-center" href="#">
                                         Servicio 2
                                     </a>
                                 </li>
                                 <li>
-                                    <a className="dropdown-item" href="#">
+                                    <a className="dropdown-item text-center" href="#">
                                         Servicio 3
                                     </a>
                                 </li>
@@ -78,7 +80,7 @@ const Navbar = () => {
                         </li>
                         <li className="nav-item">
                             <a className="nav-link" href="#">
-                                Turnos
+                                TURNOS
                             </a>
                         </li>
                     </ul>
@@ -86,21 +88,22 @@ const Navbar = () => {
 
                 <div className="col-lg-4 text-center">
                     <a className="navbar-brand" href="#">
-                        Logo
+                    <img src={NavbarLogo} alt="Logo" className="img-fluid w-50" />
                     </a>
                 </div>
 
-                <div className="navbar-right col-lg-4 d-flex align-items-center justify-content-lg-center">
+                <div className="navbar-right col-lg-4 mt-3 mt-md-0 mx-auto text-center">
                     <button
-                        className="btn btn-primary"
+                        className="btn btn-color mx-auto rounded-sides"
                         data-bs-toggle="modal"
                         data-bs-target="#myModal"
                     >
-                        Iniciar sesión
+                        INICIAR SESIÓN
                     </button>
                 </div>
             </div>
         </nav>
+        
     );
 };
 

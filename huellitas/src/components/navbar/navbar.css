@@ -1,0 +1,17 @@
+.navbar-border-bottom{
+    border-bottom: 5px solid #000; 
+  }
+
+  .rounded-sides {
+    border-radius: 25px; /* Controla el redondeo de ambas esquinas */
+  }
+
+  .btn-color {
+    background-color: #0BDEBA;
+    color: white; 
+  }
+
+  .btn-color:hover {
+    background-color: #0CFA8E; /* Establece el color de fondo deseado */
+    /* Otras propiedades de estilo, si es necesario */
+  }

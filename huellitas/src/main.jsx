@@ -1,16 +1,17 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
+import ReactDOM from 'react-dom/client';
+import './custom.scss'; // Asegúrate de que esté importado antes de los estilos de Bootstrap
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-import Navbar from './components/navbar/Navbar'; // Importa el componente Navbar
-import Footer from './components/footer/Footer'; // Importa el componente Footer
+import './index.css';
+import Navbar from './components/navbar/Navbar';
+import Footer from './components/footer/Footer';
 
 const MainApp = () => {
   return (
     <div>
-      <Navbar /> {/* Usar el componente Navbar */}
-      <Footer /> {/* Usar el componente Footer */}
+      <Navbar /> {}
+      <Footer /> {}
     </div>
   );
 };
