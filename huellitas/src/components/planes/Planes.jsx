@@ -6,7 +6,7 @@ import Button from 'react-bootstrap/Button';
 function Planes() {
   return (
     <div className='planesContainer'>
-      <h1 className="tituloPlanes">Nuestros planes</h1>
+      <h1 className="tituloPlanes">Nuestros Planes</h1>
       <Accordion className='estiloPlanes'>
         <Accordion.Item eventKey="0" className='estiloPlan'>
           <Accordion.Header className='tituloPlan'>Primeros pasos</Accordion.Header>

@@ -1,0 +1,48 @@
+{
+  "productos": [
+    {
+      "marca": "Royal canin",
+      "tipo": "alimento",
+      "precio": "30000",
+      "id": 1
+    },
+    {
+      "marca": "prueba",
+      "tipo": "alimento",
+      "precio": "1000",
+      "id": 2
+    },
+    {
+      "marca": "hueso",
+      "tipo": "alimento",
+      "precio": "532",
+      "id": 4
+    },
+    {
+      "marca": "pedigree",
+      "tipo": "golosina",
+      "precio": "500",
+      "id": 5
+    },
+    {
+      "marca": "eukanuba",
+      "tipo": "alimento",
+      "precio": "100",
+      "id": 6
+    },
+    {
+      "marca": "perro",
+      "tipo": "calle",
+      "precio": "10",
+      "img": "C:\\fakepath\\imagen6.jpg",
+      "id": 9
+    },
+    {
+      "marca": "sabrositos",
+      "tipo": "alimento",
+      "precio": "10",
+      "img": "C:\\fakepath\\imagen9.jpg",
+      "id": 10
+    }
+  ]
+}

@@ -1,9 +1,8 @@
 import './App.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
 import ProductosContexto from './components/context/ProductosContext';
 import Productos from './components/productos/Productos';
-import PaginaPrincipal from './pages/paginaPrincipal/paginaPrincipal';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Rutas from './components/rutas/rutas';
 
 
 
@@ -11,18 +10,13 @@ const App = () => {
   return (
     <>
 
-      {/* <Router>
-        <Routes>
-          <Route exact path='/' element={<PaginaPrincipal />} />
-          <Route path="/" element={<Planes />} />
-        </Routes>
-      </Router> */}
-{/* 
-      <PaginaPrincipal /> */}
       
+
       <ProductosContexto>
-        <Productos />
+        <Rutas />
+        {/* <Productos /> */}
       </ProductosContexto>
+
 
     </>
   )
