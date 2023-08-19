@@ -1,19 +1,21 @@
 .colorFondo{
-    background-color: #feecd4;
+    background-color: white;
 }
 
+
 .main-img{
-    padding-top: 10% ;
-    
+    padding-top: 30% ;
+    width: 100%;
 }
  
 
 .main-description{
-    font-size: 14px;
+    font-size: 22px;
 
 }
 
 .btn-sz-primary{
+  
     font-size: 14px;
     padding: 5px 25px;
     border-radius: 50px ;
