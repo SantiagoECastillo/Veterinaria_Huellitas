@@ -1,5 +1,5 @@
 import React from 'react';
-import NavbarLogo from '../../images/NavbarLogo.jpg'
+import NavbarLogo from '../../images/NavbarLogo.png'
 import './navbar.css'; 
 
 const Navbar = () => {
@@ -20,7 +20,7 @@ const Navbar = () => {
 
                 <div className="collapse navbar-collapse col-lg-4 text-center mt-1" id="navbarNav">
                     <ul className="navbar-nav">
-                        <li className="nav-item dropdown ">
+                        <li className="nav-item dropdown negrita ">
                             <a
                                 className="nav-link dropdown-toggle"
                                 href="#"
@@ -49,7 +49,7 @@ const Navbar = () => {
                                 </li>
                             </ul>
                         </li>
-                        <li className="nav-item dropdown">
+                        <li className="nav-item dropdown negrita">
                             <a
                                 className="nav-link dropdown-toggle"
                                 href="#"
@@ -78,7 +78,7 @@ const Navbar = () => {
                                 </li>
                             </ul>
                         </li>
-                        <li className="nav-item">
+                        <li className="nav-item negrita">
                             <a className="nav-link" href="#">
                                 TURNOS
                             </a>
@@ -94,7 +94,7 @@ const Navbar = () => {
 
                 <div className="navbar-right col-lg-4 mt-3 mt-md-0 mx-auto text-center">
                     <button
-                        className="btn btn-color mx-auto rounded-sides"
+                        className="btn btn-color mx-auto rounded-sides negrita"
                         data-bs-toggle="modal"
                         data-bs-target="#myModal"
                     >

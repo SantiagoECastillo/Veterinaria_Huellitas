@@ -1,5 +1,26 @@
 .footer-divider {
-    border-top: 1px solid #ccc; 
+    border-top: 1px solid #0CFA8E; 
     margin-top: 20px; 
     padding-top: 20px; 
+  }
+
+  .estilo-titulo4 h4 {
+    font-style: italic;
+    margin-bottom: 20px; 
+    color: #0C64FA;
+
+  }
+
+  p {
+    margin-bottom: 5px;
+  }
+
+ 
+
+  .color-icono {
+    color: #0C64FA;
+  }
+
+  .espaciado {
+    margin-right: 35px;
   }

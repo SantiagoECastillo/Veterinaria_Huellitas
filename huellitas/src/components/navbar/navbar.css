@@ -3,7 +3,7 @@
   }
 
   .rounded-sides {
-    border-radius: 25px; /* Controla el redondeo de ambas esquinas */
+    border-radius: 25px; 
   }
 
   .btn-color {
@@ -12,6 +12,10 @@
   }
 
   .btn-color:hover {
-    background-color: #0CFA8E; /* Establece el color de fondo deseado */
-    /* Otras propiedades de estilo, si es necesario */
+    background-color: #0CFA8E;
+ 
+  }
+
+  .negrita {
+    font-weight: bold; 
   }
