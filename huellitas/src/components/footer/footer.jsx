@@ -3,27 +3,42 @@ import FooterLogo from "../../images/Footerlogo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFacebook,
-  faTwitter,
+  faXTwitter,
   faInstagram,
 } from "@fortawesome/free-brands-svg-icons";
 import { faClock, faMap } from "@fortawesome/free-regular-svg-icons";
 import "./footer.css";
 import EnviarMail from "../mail/EnviarMail";
+import { useState } from "react";
+import { Modal, Button } from "react-bootstrap";
+import 'leaflet/dist/leaflet.css';
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 
 const Footer = () => {
+  const [showMapModal, setShowMapModal] = useState(false);
+
+  const location = {
+    lat: -26.836284,
+    lng: -65.207147,
+    name: "Dirección: Gral. Paz 576", // Cambia esto con tu dirección
+  };
+
+  const openMapModal = () => {
+    setShowMapModal(true);
+  };
+
   return (
     <footer className="container">
       <div className="footer-divider"></div>
       <div className="row">
-        {/* Columna 1: Logo y Redes Sociales */}
-        <div className="col-lg-4 text-center mb-4 p-3">
+        <div className="col-md-4 text-center mb-4 p-3">
           <img src={FooterLogo} alt="Logo" className="img-fluid w-50" />
           <div className="mt-3">
             <a href="#" className="btn btn-primary btn-social m-1">
               <FontAwesomeIcon icon={faFacebook} />
             </a>
-            <a href="#" className="btn btn-info btn-social m-1">
-              <FontAwesomeIcon icon={faTwitter} />
+            <a href="#" className="btn btn-dark btn-social m-1">
+              <FontAwesomeIcon icon={faXTwitter} />
             </a>
             <a href="#" className="btn btn-danger btn-social m-1">
               <FontAwesomeIcon icon={faInstagram} />
@@ -31,9 +46,7 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Columna 2: Consultas */}
-
-        <div className="col-lg-4 text-center mt-5  estilo-titulo4">
+        <div className="col-md-4 text-center mt-lg-5  estilo-titulo4">
           <div className="row align-items-center">
             <div className="col-5 text-end reducir-margen-derecha ">
               <FontAwesomeIcon icon={faClock} className="fa-lg color-icono" />
@@ -56,10 +69,7 @@ const Footer = () => {
             <EnviarMail />
           </p>
         </div>
-
-        {/* Columna 3: Ubicación */}
-        {/* Columna 3: Ubicación */}
-        <div className="col-lg-4 text-center mt-5 estilo-titulo4">
+        <div className="col-md-4 text-center mt-lg-5 estilo-titulo4">
           <div className="row align-items-center">
             <div className="col-5 text-end">
               <FontAwesomeIcon icon={faMap} className="fa-lg color-icono" />
@@ -70,9 +80,30 @@ const Footer = () => {
               </h4>
             </div>
           </div>
-          <p>
+          <p onClick={openMapModal} style={{ cursor: "pointer" }}>
             <span className="espaciado"></span>Dirección: Gral. Paz 576
           </p>
+          <Modal show={showMapModal} onHide={() => setShowMapModal(false)}>
+  <Modal.Header closeButton>
+    <Modal.Title>Ubicación</Modal.Title>
+  </Modal.Header>
+  <Modal.Body>
+    <MapContainer center={[location.lat, location.lng]} zoom={15} style={{ height: "400px", width: "100%" }}>
+      <TileLayer
+        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+      />
+      <Marker position={[location.lat, location.lng]}>
+        <Popup>{location.name}</Popup>
+      </Marker>
+    </MapContainer>
+  </Modal.Body>
+  <Modal.Footer>
+    <Button variant="secondary" onClick={() => setShowMapModal(false)}>
+      Cerrar
+    </Button>
+  </Modal.Footer>
+</Modal>
         </div>
       </div>
     </footer>
