@@ -11,7 +11,7 @@ const Carrusel = () => {
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
-                    <Image className="imagenCarousel" src="src/images/carrusel/imagen3.jpg" />
+                    <Image className="imagenCarousel" src="src/images/carrusel/imagen1.png" />
                     <Carousel.Caption>
 
                     </Carousel.Caption>

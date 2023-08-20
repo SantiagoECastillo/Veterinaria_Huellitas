@@ -10,7 +10,8 @@ const Productos = () => {
 
     console.log(productos, "prueba")
     return (
-        <div className="product-conntainer">
+        
+        <div className="product-container col-12">
             {productos === undefined ? (
                 <h1>Sin productos</h1>
             ) : (
@@ -18,10 +19,12 @@ const Productos = () => {
                     {productos.map((producto) => (
                         <Col key={producto.id}>
                             <Card className="product-card">
-                                <Card.Img variant="top" src="holder.js/100px180" />
+                                <Card.Img variant="top" src={producto.img} />
                                 <Card.Body>
                                     <Card.Title>{producto.marca}</Card.Title>
                                     <Card.Text>
+                                        Producto: {producto.tipo}
+                                        <br />
                                         Precio: ${producto.precio}
                                     </Card.Text>
                                     <Button variant="primary">Comprar</Button>
