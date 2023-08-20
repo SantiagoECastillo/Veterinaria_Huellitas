@@ -1,48 +1,199 @@
-/* DetallePlanes.css */
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+.containerDetallePlanes {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  /* border: 2px blue solid; */
+}
+
+.containerDetallePlanes h1 {
+  font-size: 36px;
+  /* font-size: 24px; */
+  color: #007bff;
+  margin-bottom: 20px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.contenedorConclusion{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* border: 2px solid green; */
+}
+
+.conclusion{
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contenedorPlanes{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* border: 2px solid red; */
+}
+
+.plan-container {
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  height: 33%;
+  width: 100%;
+}
+
+
+.plan-name {
+  font-weight: bold;
+  color: #007bff;
+  font-size: 20px;
+  text-align: center;
+}
+
+.plan-description {
+  font-family: 'Arial', sans-serif;
+  font-size: 16px;
+  /* line-height: 1.5; */
+  margin-left: 5px;
+  margin-right: 5px;
+  text-align: center;
+  margin-bottom: 8vh;
+}
+
+.contenedorImgConcl{
+  position: relative;
+  display: inline-block;
+  /* border: 2px fuchsia solid;  */
+}
+
+.imagenConclusion{
+  width: 98vh;
+  height: 84vh;
+  border-radius: 10px;
+  opacity: 0.7;
+  transition: opacity 0.3s ease-in-out;
+  background-color: rgba(0, 0, 255, 0);;
+}
+
+.botonModal{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px 20px;
+ background: none;
+ color: rgb(33, 22, 230);
+ font-size: 30px;
+ border: none;
+ /* border: 2px dotted #007bff ; */
+ height: 100%;
+ width: 100%;
+ font:bold;
+}
+
+.botonModal:hover{
+  transition: 0.3s;
+  background-color: #007bff6e;
+  font-size: 50px;
+  color: #f5f5f5;
+}
+
+.textoConclusion{
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  font-weight: bold;
+  background-color: #007bff;
+  color: black;
+  font-size: 22px;
+}
+
+.modalPlanes{
+  background-color: #007bff30;
+}
+
+.contenedorModalPlanes{
+  box-shadow: 5px 5px 5px grey;
+  border-radius: 10px;
+}
+.headerModalPlanes{
+  background-color: #007bff;
+}
+
+.bodyModalPlanes{
+  background-color: #f5f5f5;
+  border-radius: 10px;
+}
+
+.tituloModalPlanes{
+  color: black;
+}
+
+
+
+@media (min-width: 360px) and (max-width: 499px) {
+  .imagenConclusion{
+    width: 41.5vh;
+    height: 43vh;
   }
-  
-  .container h1 {
-    font-size: 36px;
-    color: #007bff;
-    margin-bottom: 20px;
-    text-align: center;
-    text-transform: uppercase;
+  .contenedorPlanes{
+    margin-top: 2vh;
+}
+}
+
+@media (min-width: 500px) and (max-width: 780px){
+  .imagenConclusion{
+    width: 69vh;
+    height: 50vh;
   }
-  
-  .plan-container {
-    background-color: #f5f5f5;
-    border: 1px solid #ddd;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    border-radius: 10px;
-    margin-bottom: 20px;
+  .contenedorPlanes{
+    margin-top: 2vh;
+}
+}
+
+@media (min-width: 781px) and (max-width: 850px){
+  .imagenConclusion{
+    width: 66vh;
+    height: 50vh;
   }
-  
-  .plan-name {
-    font-weight: bold;
-    color: #007bff;
-    font-size: 20px;
+  .contenedorPlanes{
+    margin-top: 2vh;
+}
+}
+
+@media (min-width: 851px) and (max-width: 1000px){
+  .imagenConclusion{
+    width: 63vh;
+    height: 50vh;
   }
-  
-  .plan-description {
-    font-family: 'Arial', sans-serif;
-    font-size: 16px;
-    line-height: 1.5;
-    margin-top: 10px;
+  .contenedorPlanes{
+    margin-top: 2vh;
+}
+}
+
+@media (width: 1280px) and (height: 800px){
+
+  .textoConclusion{
+    justify-content: center;
+    height: 19vh;
   }
 
-  .conclusion {
-    background-color: #0bdce3;
-    padding: 20px;
-    border-radius: 10px;
-    margin-top: 20px;
-    font-size: 18px;
-    text-align: center;
+  .imagenConclusion{
+    height: 100vh;
   }
+}
