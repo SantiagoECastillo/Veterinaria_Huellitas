@@ -20,7 +20,7 @@ const Footer = () => {
   const location = {
     lat: -26.836284,
     lng: -65.207147,
-    name: "Dirección: Gral. Paz 576", // Cambia esto con tu dirección
+    name: "Dirección: Gral. Paz 576",
   };
 
   const openMapModal = () => {
@@ -28,8 +28,8 @@ const Footer = () => {
   };
 
   return (
-    <footer className="container">
-      <div className="footer-divider"></div>
+    <footer className="container ">
+      <div className="footer-divider mt-3 mb-3"></div>
       <div className="row">
         <div className="col-md-4 text-center mb-4 p-3">
           <img src={FooterLogo} alt="Logo" className="img-fluid w-50" />
@@ -46,42 +46,43 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="col-md-4 text-center mt-lg-5  estilo-titulo4">
+        <div className="col-md-4 text-center estilo-titulo4">
           <div className="row align-items-center">
-            <div className="col-5 text-end reducir-margen-derecha ">
+            <div className="col-12 text-center">
               <FontAwesomeIcon icon={faClock} className="fa-lg color-icono" />
             </div>
-            <div className="col-7 text-start reducir-margen-izquierda">
+            <div className="col-12 text-center">
               <h4 className="mt-3">
                 <i className="far fa-clock text-info"></i> Consultas
               </h4>
             </div>
           </div>
           <p>
-            <span className="espaciado"></span>Horarios de consulta:
+            <span></span>Horarios de consulta:
           </p>
           <p>
-            <span className="espaciado"></span>Lunes a Viernes: 9:00 AM - 5:00
-            PM
+            <span></span>Lunes a Viernes: 8:00 - 17:00
           </p>
           <p>
-            <span className="espaciado"></span>
+          <span></span>Sábados: 9:00 - 13:00
+        </p>
+          <p className="estilo-link">
             <EnviarMail />
           </p>
         </div>
-        <div className="col-md-4 text-center mt-lg-5 estilo-titulo4">
+        <div className="col-md-4 text-center estilo-titulo4">
           <div className="row align-items-center">
-            <div className="col-5 text-end">
+            <div className="col-12 text-center">
               <FontAwesomeIcon icon={faMap} className="fa-lg color-icono" />
             </div>
-            <div className="col-7 text-start">
+            <div className="col-12 text-center">
               <h4 className="mt-3">
                 <i className="fas fa-map-marker-alt text-info"></i> Ubicación
               </h4>
             </div>
           </div>
-          <p onClick={openMapModal} style={{ cursor: "pointer" }}>
-            <span className="espaciado"></span>Dirección: Gral. Paz 576
+          <p className="estilo-link" onClick={openMapModal}>
+            Dirección: Gral. Paz 576
           </p>
           <Modal show={showMapModal} onHide={() => setShowMapModal(false)}>
   <Modal.Header closeButton>

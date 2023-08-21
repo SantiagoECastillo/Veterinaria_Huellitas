@@ -6,15 +6,6 @@
     border-radius: 25px; 
   }
 
-  .btn-color {
-    background-color: #0BDEBA;
-    color: white; 
-  }
-
-  .btn-color:hover {
-    background-color: #0CFA8E;
- 
-  }
 
   .negrita {
     font-weight: bold; 

@@ -1,13 +1,17 @@
+.margen footer {
+  margin-top: 500px;
+}
+
 .footer-divider {
-    border-top: 1px solid #0CFA8E; 
-    margin-top: 20px; 
-    padding-top: 20px; 
+    border-top: 1px solid #6eb42d; 
+    margin-top: 5px; 
+    padding-top: 5px; 
   }
 
   .estilo-titulo4 h4 {
     font-style: italic;
     margin-bottom: 20px; 
-    color: #0C64FA;
+    color: #0B91DE;
 
   }
 
@@ -18,9 +22,17 @@
  
 
   .color-icono {
-    color: #0C64FA;
+    color: #6eb42d;
+    margin-top: 20px; 
   }
 
-  .espaciado {
-    margin-right: 35px;
+  .estilo-link, .estilo-link * {
+    color: #0B91DE;
+    text-decoration: underline;
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
+  }
+  
+  .estilo-link:hover, .estilo-link:hover * {
+    color: #005eff;
   }

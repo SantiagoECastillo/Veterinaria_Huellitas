@@ -1,110 +1,57 @@
 import React from 'react';
-import NavbarLogo from '../../images/NavbarLogo.png'
-import './navbar.css'; 
+import NavbarLogo from '../../images/navbarLogo.png';
+import NavbarLogoReducido from '../../images/navbarLogoReducido.png';
+import './navbar.css';
+import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
 
-const Navbar = () => {
+const EstructuraNavbar = () => {
     return (
-        <nav className="navbar navbar-expand-lg ">
-            <div className="container mx-auto m-2 ">
-                <button
-                    className="navbar-toggler"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#navbarNav"
-                    aria-controls="navbarNav"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation"
-                >
-                    <span className="navbar-toggler-icon"></span>
-                </button>
+        <Navbar expand="lg">
+            <div className="container mx-auto">
+                <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
-                <div className="collapse navbar-collapse col-lg-4 text-center mt-1" id="navbarNav">
-                    <ul className="navbar-nav">
-                        <li className="nav-item dropdown negrita ">
-                            <a
-                                className="nav-link dropdown-toggle"
-                                href="#"
-                                id="dropdown1"
-                                role="button"
-                                data-bs-toggle="dropdown"
-                                aria-expanded="false"
-                            >
-                                TIENDA
-                            </a>
-                            <ul className="dropdown-menu" aria-labelledby="dropdown1">
-                                <li>
-                                    <a className="dropdown-item text-center" href="#">
-                                        Categoría 1
-                                    </a>
-                                </li>
-                                <li>
-                                    <a className="dropdown-item text-center" href="#">
-                                        Categoría 2
-                                    </a>
-                                </li>
-                                <li>
-                                    <a className="dropdown-item text-center" href="#">
-                                        Categoría 3
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li className="nav-item dropdown negrita">
-                            <a
-                                className="nav-link dropdown-toggle"
-                                href="#"
-                                id="dropdown2"
-                                role="button"
-                                data-bs-toggle="dropdown"
-                                aria-expanded="false"
-                            >
-                                SERVICIOS
-                            </a>
-                            <ul className="dropdown-menu" aria-labelledby="dropdown2">
-                                <li>
-                                    <a className="dropdown-item text-center" href="#">
-                                        Servicio 1
-                                    </a>
-                                </li>
-                                <li>
-                                    <a className="dropdown-item text-center" href="#">
-                                        Servicio 2
-                                    </a>
-                                </li>
-                                <li>
-                                    <a className="dropdown-item text-center" href="#">
-                                        Servicio 3
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li className="nav-item negrita">
-                            <a className="nav-link" href="#">
-                                TURNOS
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+                <Navbar.Collapse id="basic-navbar-nav">
+                    <Nav className="mr-auto">
+                        <NavDropdown className='negrita text-center' title="TIENDA" id="dropdown1">
+                            <NavDropdown.Item className='text-center' href="#">Categoría 1</NavDropdown.Item>
+                            <NavDropdown.Item className='text-center' href="#">Categoría 2</NavDropdown.Item>
+                            <NavDropdown.Item className='text-center' href="#">Categoría 3</NavDropdown.Item>
+                        </NavDropdown>
 
-                <div className="col-lg-4 text-center">
-                    <a className="navbar-brand" href="#">
-                    <img src={NavbarLogo} alt="Logo" className="img-fluid w-50" />
-                    </a>
-                </div>
+                        <NavDropdown className='negrita text-center' title="SERVICIOS" id="dropdown2">
+                            <NavDropdown.Item className='text-center' href="#">Servicio 1</NavDropdown.Item>
+                            <NavDropdown.Item className='text-center' href="#">Servicio 2</NavDropdown.Item>
+                            <NavDropdown.Item className='text-center' href="#">Servicio 3</NavDropdown.Item>
+                        </NavDropdown>
 
-                <div className="navbar-right col-lg-4 mt-3 mt-md-0 mx-auto text-center">
-                    <button
-                        className="btn btn-color mx-auto rounded-sides negrita"
-                        data-bs-toggle="modal"
-                        data-bs-target="#myModal"
-                    >
-                        INICIAR SESIÓN
-                    </button>
-                </div>
+                        <Nav.Link className='negrita text-center' href="#">TURNOS</Nav.Link>
+                    </Nav>
+<div className="mx-auto">
+<div className="d-none d-lg-block">
+                    <Navbar.Brand href="#">
+                        <img src={NavbarLogo} alt="Logo de Huellitas" className="img-fluid" />
+                    </Navbar.Brand>
+                    </div>
+                    </div>
+
+                    <Nav className="ml-auto">
+                        <button
+                            className="btn btn-info text-black mt-3 mx-auto rounded-pill fw-bold"
+                            data-bs-toggle="modal"
+                            data-bs-target="#myModal"
+                        >
+                            INICIAR SESIÓN
+                        </button>
+                    </Nav>
+                </Navbar.Collapse>
+                <div className="d-lg-none mx-auto mt-0">
+                <Navbar.Brand href="#">
+                    <img src={NavbarLogoReducido} alt="Logo de Huellitas reducido" className="d-flex img-fluid mt-4" />
+                </Navbar.Brand>
             </div>
-        </nav>
-        
+            </div>
+        </Navbar>
     );
 };
 
-export default Navbar;
+export default EstructuraNavbar;
