@@ -79,7 +79,11 @@ const EstructuraNavbar = () => {
               </NavDropdown.Item>
             </NavDropdown>
 
-            <Nav.Link className="fw-bold text-center" href="#" onClick={redirigirAError404}>
+            <Nav.Link
+              className="fw-bold text-center"
+              href="#"
+              onClick={redirigirAError404}
+            >
               TURNOS
             </Nav.Link>
           </Nav>
@@ -122,4 +126,3 @@ const EstructuraNavbar = () => {
 };
 
 export default EstructuraNavbar;
-

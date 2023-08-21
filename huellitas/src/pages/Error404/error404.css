@@ -14,12 +14,7 @@
 
 }
 
-.btn-sz-primary{
-  
-    font-size: 14px;
-    padding: 5px 25px;
-    border-radius: 50px ;
-    color: white !important;
-    background-color: #34d796 !important;
-
+.colorYestilo-verde {
+    color: #6eb42d;
+    font-style: italic;
 }

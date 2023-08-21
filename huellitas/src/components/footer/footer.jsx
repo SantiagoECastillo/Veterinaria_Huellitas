@@ -8,15 +8,14 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { faClock, faMap } from "@fortawesome/free-regular-svg-icons";
 import "./footer.css";
-import { useNavigate } from "react-router-dom"; 
+import { useNavigate } from "react-router-dom";
 import EnviarMail from "../mail/EnviarMail";
 import { Modal, Button } from "react-bootstrap";
 import "leaflet/dist/leaflet.css";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 
 const Footer = () => {
-
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
 
   const redirigirAError404 = () => {
     navigate("/error404");
@@ -115,7 +114,10 @@ const Footer = () => {
           <p className="estilo-link fw-bold" onClick={abrirModalMapa}>
             {ubicacion.nombre}
           </p>
-          <Modal show={mostrarModalMapa} onHide={() => setMostrarModalMapa(false)}>
+          <Modal
+            show={mostrarModalMapa}
+            onHide={() => setMostrarModalMapa(false)}
+          >
             <Modal.Header closeButton>
               <Modal.Title className="negrita">Ubicación</Modal.Title>
             </Modal.Header>
