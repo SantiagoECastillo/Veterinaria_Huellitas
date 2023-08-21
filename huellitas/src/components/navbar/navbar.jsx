@@ -3,8 +3,19 @@ import NavbarLogo from "../../images/navbarLogo.png";
 import NavbarLogoReducido from "../../images/navbarLogoReducido.png";
 import "./navbar.css";
 import { Navbar, Nav, NavDropdown } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 
 const EstructuraNavbar = () => {
+  const navegar = useNavigate();
+
+  const redirigirAError404 = () => {
+    navegar("/error404");
+  };
+
+  const redirigirAError404EnDropdown = () => {
+    redirigirAError404();
+  };
+
   return (
     <Navbar expand="lg">
       <div className="container">
@@ -17,14 +28,26 @@ const EstructuraNavbar = () => {
               title="TIENDA"
               id="dropdown1"
             >
-              <NavDropdown.Item className="text-center" href="#">
-              Alimentos balanceados
+              <NavDropdown.Item
+                className="text-center"
+                href="#"
+                onClick={redirigirAError404EnDropdown}
+              >
+                Alimentos balanceados
               </NavDropdown.Item>
-              <NavDropdown.Item className="text-center" href="#">
-              Accesorios
+              <NavDropdown.Item
+                className="text-center"
+                href="#"
+                onClick={redirigirAError404EnDropdown}
+              >
+                Accesorios
               </NavDropdown.Item>
-              <NavDropdown.Item className="text-center" href="#">
-              Salud, Higiene y Estética
+              <NavDropdown.Item
+                className="text-center"
+                href="#"
+                onClick={redirigirAError404EnDropdown}
+              >
+                Salud, Higiene y Estética
               </NavDropdown.Item>
             </NavDropdown>
 
@@ -33,29 +56,43 @@ const EstructuraNavbar = () => {
               title="SERVICIOS"
               id="dropdown2"
             >
-              <NavDropdown.Item className="text-center" href="#">
+              <NavDropdown.Item
+                className="text-center"
+                href="#"
+                onClick={redirigirAError404EnDropdown}
+              >
                 Laboratorio
               </NavDropdown.Item>
-              <NavDropdown.Item className="text-center" href="#">
+              <NavDropdown.Item
+                className="text-center"
+                href="#"
+                onClick={redirigirAError404EnDropdown}
+              >
                 Peluquería
               </NavDropdown.Item>
-              <NavDropdown.Item className="text-center" href="#">
+              <NavDropdown.Item
+                className="text-center"
+                href="#"
+                onClick={redirigirAError404EnDropdown}
+              >
                 Urgencias
               </NavDropdown.Item>
             </NavDropdown>
 
-            <Nav.Link className="fw-bold text-center" href="#">
+            <Nav.Link className="fw-bold text-center" href="#" onClick={redirigirAError404}>
               TURNOS
             </Nav.Link>
           </Nav>
           <div className="mx-auto">
             <div className=" d-none d-lg-block">
               <Navbar.Brand href="#">
-                <img
-                  src={NavbarLogo}
-                  alt="Logo de Huellitas"
-                  className="img-fluid"
-                />
+                <a href="/" onClick={() => navegar("/")}>
+                  <img
+                    src={NavbarLogo}
+                    alt="Logo de Huellitas"
+                    className="img-fluid"
+                  />
+                </a>
               </Navbar.Brand>
             </div>
           </div>
@@ -80,8 +117,9 @@ const EstructuraNavbar = () => {
           </Navbar.Brand>
         </div>
       </div>
-      </Navbar>
+    </Navbar>
   );
 };
 
 export default EstructuraNavbar;
+
