@@ -1,5 +1,9 @@
-@use "bootstrap/scss/bootstrap";
+@import 'bootstrap/scss/functions';
+@import 'bootstrap/scss/variables';
 
-$font-family-base: 'Poppins', sans-serif !important;
-$bs-body-font-family: $font-family-base !important;
+
+$font-family-base: 'Poppins', 'sans-serif';
+$bs-body-font-family: $font-family-base;
+
+@import 'bootstrap/scss/bootstrap';
 

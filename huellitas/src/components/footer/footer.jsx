@@ -1,5 +1,5 @@
 import React from "react";
-import FooterLogo from "../../images/Footerlogo.png";
+import FooterLogo from "../../images/footerlogo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFacebook,
@@ -11,7 +11,7 @@ import "./footer.css";
 import EnviarMail from "../mail/EnviarMail";
 import { useState } from "react";
 import { Modal, Button } from "react-bootstrap";
-import 'leaflet/dist/leaflet.css';
+import "leaflet/dist/leaflet.css";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 
 const Footer = () => {
@@ -64,8 +64,8 @@ const Footer = () => {
             <span></span>Lunes a Viernes: 8:00 - 17:00
           </p>
           <p>
-          <span></span>Sábados: 9:00 - 13:00
-        </p>
+            <span></span>Sábados: 9:00 - 13:00
+          </p>
           <p className="estilo-link">
             <EnviarMail />
           </p>
@@ -85,26 +85,33 @@ const Footer = () => {
             Dirección: Gral. Paz 576
           </p>
           <Modal show={showMapModal} onHide={() => setShowMapModal(false)}>
-  <Modal.Header closeButton>
-    <Modal.Title>Ubicación</Modal.Title>
-  </Modal.Header>
-  <Modal.Body>
-    <MapContainer center={[location.lat, location.lng]} zoom={15} style={{ height: "400px", width: "100%" }}>
-      <TileLayer
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-      />
-      <Marker position={[location.lat, location.lng]}>
-        <Popup>{location.name}</Popup>
-      </Marker>
-    </MapContainer>
-  </Modal.Body>
-  <Modal.Footer>
-    <Button variant="secondary" onClick={() => setShowMapModal(false)}>
-      Cerrar
-    </Button>
-  </Modal.Footer>
-</Modal>
+            <Modal.Header closeButton>
+              <Modal.Title className="negrita">Ubicación</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+              <MapContainer
+                center={[location.lat, location.lng]}
+                zoom={15}
+                style={{ height: "400px", width: "100%" }}
+              >
+                <TileLayer
+                  url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                  attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                />
+                <Marker position={[location.lat, location.lng]}>
+                  <Popup>{location.name}</Popup>
+                </Marker>
+              </MapContainer>
+            </Modal.Body>
+            <Modal.Footer>
+              <Button
+                variant="primary btn-info rounded-pill fw-bold"
+                onClick={() => setShowMapModal(false)}
+              >
+                CERRAR
+              </Button>
+            </Modal.Footer>
+          </Modal>
         </div>
       </div>
     </footer>

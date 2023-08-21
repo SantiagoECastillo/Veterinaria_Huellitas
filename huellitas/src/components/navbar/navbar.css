@@ -1,12 +1,4 @@
-.navbar-border-bottom{
-    border-bottom: 5px solid #000; 
-  }
+.navbar-border-bottom {
+  border-bottom: 5px solid #000;
+}
 
-  .rounded-sides {
-    border-radius: 25px; 
-  }
-
-
-  .negrita {
-    font-weight: bold; 
-  }

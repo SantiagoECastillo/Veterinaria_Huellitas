@@ -3,36 +3,40 @@
 }
 
 .footer-divider {
-    border-top: 1px solid #6eb42d; 
-    margin-top: 5px; 
-    padding-top: 5px; 
-  }
+  border-top: 1px solid #6eb42d;
+  margin-top: 5px;
+  padding-top: 5px;
+}
 
-  .estilo-titulo4 h4 {
-    font-style: italic;
-    margin-bottom: 20px; 
-    color: #0B91DE;
+.estilo-titulo4 h4 {
+  font-style: italic;
+  margin-bottom: 20px;
+  color: #0b91de;
+}
 
-  }
+p {
+  margin-bottom: 5px;
+}
 
-  p {
-    margin-bottom: 5px;
-  }
+.color-icono {
+  color: #6eb42d;
+  margin-top: 20px;
+}
 
- 
+.estilo-link,
+.estilo-link * {
+  color: #0b91de;
+  text-decoration: underline;
+  cursor: pointer;
+  transition: color 0.2s ease-in-out;
+}
 
-  .color-icono {
-    color: #6eb42d;
-    margin-top: 20px; 
-  }
+.estilo-link:hover,
+.estilo-link:hover * {
+  color: #005eff;
+}
 
-  .estilo-link, .estilo-link * {
-    color: #0B91DE;
-    text-decoration: underline;
-    cursor: pointer;
-    transition: color 0.2s ease-in-out;
-  }
-  
-  .estilo-link:hover, .estilo-link:hover * {
-    color: #005eff;
-  }
+.negrita {
+  font-weight: bold;
+}
+
