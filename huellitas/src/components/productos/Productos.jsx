@@ -1,44 +1,37 @@
-import "./productos.css"
+import "./productos.css";
 import { useContext } from "react";
 import { ProductosContexto } from "../context/ProductosContext";
-import { Button, Card, Col, Row } from 'react-bootstrap';
-import axios from "axios";
+import { Button, Card } from 'react-bootstrap';
 
 const Productos = () => {
+    const { productos } = useContext(ProductosContexto);
 
-    const { productos } = useContext(ProductosContexto)
+    console.log(productos, "prueba");
 
-    console.log(productos, "prueba")
     return (
-        
         <div className="product-container col-12">
             {productos === undefined ? (
                 <h1>Sin productos</h1>
             ) : (
-                <Row xs={1} sm={2} md={3} className="g-4">
+                <div className="product-cards-container">
                     {productos.map((producto) => (
-                        <Col key={producto.id}>
-                            <Card className="product-card">
-                                <Card.Img variant="top" src={producto.img} />
-                                <Card.Body>
-                                    <Card.Title>{producto.marca}</Card.Title>
-                                    <Card.Text>
-                                        Producto: {producto.tipo}
-                                        <br />
-                                        Precio: ${producto.precio}
-                                    </Card.Text>
-                                    <Button variant="primary">Comprar</Button>
-                                </Card.Body>
-                            </Card>
-                        </ Col>
+                        <Card key={producto.id} className="product-card">
+                            <Card.Img variant="top" src={producto.img} />
+                            <Card.Body>
+                                <Card.Title className="card-title">{producto.marca}</Card.Title>
+                                <Card.Text className="card-text">
+                                    Producto: {producto.tipo}
+                                    <br />
+                                    Precio: ${producto.precio}
+                                </Card.Text>
+                                <Button variant="primary">Comprar</Button>
+                            </Card.Body>
+                        </Card>
                     ))}
-
-                </Row>
+                </div>
             )}
         </div>
-
     );
-
 }
 
-export default Productos
+export default Productos;
