@@ -7,24 +7,24 @@ import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 const EstructuraNavbar = () => {
   return (
     <Navbar expand="lg">
-      <div className="container mx-auto">
+      <div className="container">
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="mr-auto">
+          <Nav className="mx-auto">
             <NavDropdown
               className="fw-bold text-center"
               title="TIENDA"
               id="dropdown1"
             >
               <NavDropdown.Item className="text-center" href="#">
-                Categoría 1
+              Alimentos balanceados
               </NavDropdown.Item>
               <NavDropdown.Item className="text-center" href="#">
-                Categoría 2
+              Accesorios
               </NavDropdown.Item>
               <NavDropdown.Item className="text-center" href="#">
-                Categoría 3
+              Salud, Higiene y Estética
               </NavDropdown.Item>
             </NavDropdown>
 
@@ -34,13 +34,13 @@ const EstructuraNavbar = () => {
               id="dropdown2"
             >
               <NavDropdown.Item className="text-center" href="#">
-                Servicio 1
+                Laboratorio
               </NavDropdown.Item>
               <NavDropdown.Item className="text-center" href="#">
-                Servicio 2
+                Peluquería
               </NavDropdown.Item>
               <NavDropdown.Item className="text-center" href="#">
-                Servicio 3
+                Urgencias
               </NavDropdown.Item>
             </NavDropdown>
 
@@ -49,7 +49,7 @@ const EstructuraNavbar = () => {
             </Nav.Link>
           </Nav>
           <div className="mx-auto">
-            <div className="d-none d-lg-block">
+            <div className=" d-none d-lg-block">
               <Navbar.Brand href="#">
                 <img
                   src={NavbarLogo}
@@ -60,9 +60,9 @@ const EstructuraNavbar = () => {
             </div>
           </div>
 
-          <Nav className="ml-auto">
+          <Nav className="mx-auto">
             <button
-              className="btn btn-info text-black mt-3 mx-auto rounded-pill fw-bold"
+              className="btn btn-info text-black mx-auto rounded-pill fw-bold"
               data-bs-toggle="modal"
               data-bs-target="#myModal"
             >
@@ -80,7 +80,7 @@ const EstructuraNavbar = () => {
           </Navbar.Brand>
         </div>
       </div>
-    </Navbar>
+      </Navbar>
   );
 };
 

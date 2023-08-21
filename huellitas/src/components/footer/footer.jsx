@@ -1,5 +1,5 @@
 import React from "react";
-import FooterLogo from "../../images/footerlogo.png";
+import FooterLogo from "../../images/footerLogo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFacebook,
@@ -8,13 +8,22 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { faClock, faMap } from "@fortawesome/free-regular-svg-icons";
 import "./footer.css";
+import { useNavigate } from "react-router-dom"; // Importa useNavigate desde react-router-dom
 import EnviarMail from "../mail/EnviarMail";
 import { useState } from "react";
 import { Modal, Button } from "react-bootstrap";
 import "leaflet/dist/leaflet.css";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 
+
 const Footer = () => {
+
+  const navigate = useNavigate(); // Obtiene la función de navegación
+
+  const redirectToError404 = () => {
+    navigate("/error404");
+  };
+
   const [showMapModal, setShowMapModal] = useState(false);
 
   const location = {
@@ -29,27 +38,39 @@ const Footer = () => {
 
   return (
     <footer className="container ">
-      <div className="footer-divider mt-3 mb-3"></div>
+      <div className="footer-divider "></div>
       <div className="row">
         <div className="col-md-4 text-center mb-4 p-3">
           <img src={FooterLogo} alt="Logo" className="img-fluid w-50" />
           <div className="mt-3">
-            <a href="#" className="btn btn-primary btn-social m-1">
-              <FontAwesomeIcon icon={faFacebook} />
-            </a>
-            <a href="#" className="btn btn-dark btn-social m-1">
-              <FontAwesomeIcon icon={faXTwitter} />
-            </a>
-            <a href="#" className="btn btn-danger btn-social m-1">
-              <FontAwesomeIcon icon={faInstagram} />
-            </a>
+        <a
+          href="#"
+          className="btn btn-primary btn-social m-1"
+          onClick={redirectToError404} // Redirige al hacer clic
+        >
+          <FontAwesomeIcon icon={faFacebook} />
+        </a>
+        <a
+          href="#"
+          className="btn btn-dark btn-social m-1"
+          onClick={redirectToError404} // Redirige al hacer clic
+        >
+          <FontAwesomeIcon icon={faXTwitter} />
+        </a>
+        <a
+          href="#"
+          className="btn btn-danger btn-social m-1"
+          onClick={redirectToError404} // Redirige al hacer clic
+        >
+          <FontAwesomeIcon icon={faInstagram} />
+        </a>
           </div>
         </div>
 
         <div className="col-md-4 text-center estilo-titulo4">
           <div className="row align-items-center">
             <div className="col-12 text-center">
-              <FontAwesomeIcon icon={faClock} className="fa-lg color-icono" />
+              <FontAwesomeIcon icon={faClock} className="fa-lg color-icono mt-md-3 mt-lg-5" />
             </div>
             <div className="col-12 text-center">
               <h4 className="mt-3">
@@ -66,14 +87,14 @@ const Footer = () => {
           <p>
             <span></span>Sábados: 9:00 - 13:00
           </p>
-          <p className="estilo-link">
+          <p className="estilo-link fw-bold">
             <EnviarMail />
           </p>
         </div>
         <div className="col-md-4 text-center estilo-titulo4">
           <div className="row align-items-center">
             <div className="col-12 text-center">
-              <FontAwesomeIcon icon={faMap} className="fa-lg color-icono" />
+              <FontAwesomeIcon icon={faMap} className="fa-lg color-icono mt-md-3 mt-lg-5" />
             </div>
             <div className="col-12 text-center">
               <h4 className="mt-3">
@@ -81,7 +102,7 @@ const Footer = () => {
               </h4>
             </div>
           </div>
-          <p className="estilo-link" onClick={openMapModal}>
+          <p className="estilo-link fw-bold" onClick={openMapModal}>
             Dirección: Gral. Paz 576
           </p>
           <Modal show={showMapModal} onHide={() => setShowMapModal(false)}>

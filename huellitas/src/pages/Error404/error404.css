@@ -1,0 +1,25 @@
+.colorFondo{
+    background-color: white;
+}
+
+
+.main-img{
+    padding-top: 30% ;
+    width: 100%;
+}
+ 
+
+.main-description{
+    font-size: 22px;
+
+}
+
+.btn-sz-primary{
+  
+    font-size: 14px;
+    padding: 5px 25px;
+    border-radius: 50px ;
+    color: white !important;
+    background-color: #34d796 !important;
+
+}
