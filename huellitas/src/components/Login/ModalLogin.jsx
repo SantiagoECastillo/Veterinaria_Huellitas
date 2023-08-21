@@ -1,4 +1,4 @@
-import {Modal} from 'react-bootstrap';
+import {Form, Modal} from 'react-bootstrap';
 import { useContext, useState } from 'react';
 import { UsuarioContexto } from '../../Context/UsuariosContexto';
 import ModalRegistro from '../Registro/ModalRegistro';
@@ -77,7 +77,7 @@ const ModalLogin = ({show, handleClose}) => {
               <div className='d-flex flex-column justify-content-center mt-2'>
                 <button type='submit' className='btn btn-info mb-2 text-white'>Iniciar Sesión</button>
               </div>
-            </form>  
+            </form>
           </Modal.Body>
           <div className='d-flex gap-1 justify-content-center my-3'>
             <p>¿No tienes cuenta aun?</p>
