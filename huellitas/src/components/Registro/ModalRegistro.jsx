@@ -1,19 +1,21 @@
+import { useState } from 'react';
 import {Modal} from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
 import Swal from 'sweetalert2';
-import { useState } from 'react';
+import { usarUsuContext } from '../../Context/UsuariosContexto';
+
 import svgNombreRegistro from '../../imagenes/username-icon.svg';
 import svgCorreoRegistro from '../../imagenes/email.svg';
 import svgContrasenaRegistro from '../../imagenes/password-icon.svg';
 import svgTelefonoRegistro from '../../imagenes/phone-icon.svg';
 import './ModalRegistro.css'
-import { usarUsuContext } from '../../Context/UsuariosContexto';
 
 
-const ModalRegistro = ({showReg, handleCloseRegistro}) =>{
+
+const ModalRegistro = ({show, handleClose}) =>{
 
   const {register, handleSubmit ,formState:{errors}, watch, reset} = useForm();
-  const { login } = usarUsuContext();
+  const { registrar, errorRegistro} = usarUsuContext();
 
   const [datosUsuario, setDatosUsuario] = useState({
     nombre: "",
@@ -24,21 +26,24 @@ const ModalRegistro = ({showReg, handleCloseRegistro}) =>{
     rol: "usuario"
   }); 
 
+  
   const handleChange = (evento) => {
     setDatosUsuario({...datosUsuario, [evento.target.name]: evento.target.value})
   }
   
   
   const onSubmit = handleSubmit( async (values) => {
-    login(values);
+    registrar(values);
     setDatosUsuario({nombre: "", apellido: "", correo: "", contrasena: "", telefono: "", rol: "usuario"})
+    /*
     reset();
     handleCloseRegistro();
     Swal.fire('Su usuario se creo exitosamente', ':)', 'success');
+    */
   })
 
   return(
-    <Modal show={showReg} onHide={handleCloseRegistro}>
+    <Modal show={show} onHide={handleClose}>
 
       <Modal.Header closeButton className='border-bottom-0'>
       </Modal.Header>
@@ -50,8 +55,18 @@ const ModalRegistro = ({showReg, handleCloseRegistro}) =>{
         <h2 className='text-center mt-3'>Crea tu cuenta</h2>
       </div>
       
-      <Modal.Body className='px-5'>
+      {/*<Modal.Body className='px-5'>*/}
+      <div className='px-5'> 
+         
+        {
+          errorRegistro.map((error, i) => {
+            <div className='bg-red-500 p-2 text-white' key={i}> {error} </div>
+          })
+        }
+
         <form onSubmit={onSubmit}>
+
+
           <div className="mb-3 input-group">
             <div className="input-group-text bg-info">
               <img src={svgNombreRegistro} alt="" className="imgRegistroFormulario" />
@@ -75,9 +90,9 @@ const ModalRegistro = ({showReg, handleCloseRegistro}) =>{
               })}
               value={datosUsuario.nombre} onChange={handleChange}
             />
-            {errors.nombre && (
-              <div className="invalid-feedback">{errors.nombre.message}</div>
-            )}
+            {
+              errors.nombre && (<p className="invalid-feedback text-red-500 my-1">{errors.nombre.message}</p>)
+            }
           </div>
           
 
@@ -104,9 +119,9 @@ const ModalRegistro = ({showReg, handleCloseRegistro}) =>{
               })}
               value={datosUsuario.apellido} onChange={handleChange} 
             />
-            {errors.apellido && (
-              <div className="invalid-feedback">{errors.apellido.message}</div>
-            )}
+            {
+              errors.apellido && (<p className="invalid-feedback text-red-500 my-1">{errors.apellido.message}</p>)
+            }
           </div>
 
 
@@ -129,9 +144,9 @@ const ModalRegistro = ({showReg, handleCloseRegistro}) =>{
               })}
               value={datosUsuario.correo} onChange={handleChange} 
             />
-            {errors.correo && (
-              <div className="invalid-feedback">{errors.correo.message}</div>
-            )}
+            {
+              errors.correo && (<p className="invalid-feedback text-red-500 my-1">{errors.correo.message}</p>)
+            }
           </div>
 
 
@@ -139,7 +154,7 @@ const ModalRegistro = ({showReg, handleCloseRegistro}) =>{
             <div className="input-group-text bg-info">
               <img src={svgContrasenaRegistro} alt="" className="imgRegistroFormulario" />
             </div>
-              <input type="password" 
+            <input type="password" 
                 className={`form-control ${errors.contrasena ? "is-invalid" : ""}`} 
                 placeholder="Contraseña" name='contrasena' aria-describedby="contrasena"
                 {...register("contrasena",{
@@ -156,12 +171,11 @@ const ModalRegistro = ({showReg, handleCloseRegistro}) =>{
                     message: "La contraseña debe tener como maximo 20 caracteres"
                   }
                 })}
-                value={datosUsuario.contrasena} onChange={handleChange} 
-              />
-              {errors.contrasena && (
-                <div className="invalid-feedback">{errors.contrasena.message}</div>
-              )}
-
+              value={datosUsuario.contrasena} onChange={handleChange} 
+            />
+            { 
+              errors.contrasena && (<p className="invalid-feedback text-red-500 my-1">{errors.contrasena.message}</p>)
+            }
           </div>
 
 
@@ -169,7 +183,7 @@ const ModalRegistro = ({showReg, handleCloseRegistro}) =>{
             <div className="input-group-text bg-info">
               <img src={svgContrasenaRegistro} alt="" className="imgRegistroFormulario" />
             </div>
-              <input type="password" 
+            <input type="password" 
                 className={`form-control ${errors.confirmarContrasena ? "is-invalid" : ""}`} 
                 placeholder="Confirmar contraseña" name='contrasena' aria-describedby="contrasena"
                 {...register("confirmarContrasena", {
@@ -179,12 +193,11 @@ const ModalRegistro = ({showReg, handleCloseRegistro}) =>{
                   },
                   validate: value => value === watch('contrasena') || 'Las contraseñas no coinciden' 
                 })}
-              />
-              {errors.confirmarContrasena && (
-                <div className="invalid-feedback">{errors.confirmarContrasena.message}</div>
-              )}
+            />
+            {
+              errors.confirmarContrasena && (<p className="invalid-feedback text-red-500 my-1">{errors.confirmarContrasena.message}</p>)
+            }
           </div>
-
 
           <div className="mb-3 input-group">
             <div className="input-group-text bg-info">
@@ -205,9 +218,9 @@ const ModalRegistro = ({showReg, handleCloseRegistro}) =>{
               })}
               value={datosUsuario.telefono} onChange={handleChange} 
             />
-            {errors.telefono && (
-              <div className="invalid-feedback">{errors.telefono.message}</div>
-            )}
+            {
+              errors.telefono && (<p className="invalid-feedback text-red-500 my-1">{errors.telefono.message}</p>)
+            }
           </div>
 
           <input type="hidden" 
@@ -220,7 +233,8 @@ const ModalRegistro = ({showReg, handleCloseRegistro}) =>{
             <button type='submit' className='btn btn-info mb-4 text-white'>Registrarse</button>
           </div>
         </form>
-      </Modal.Body>
+        </div>
+      {/*</Modal.Body>*/}
     </Modal>
   )
 }

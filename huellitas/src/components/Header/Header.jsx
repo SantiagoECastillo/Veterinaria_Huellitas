@@ -1,14 +1,18 @@
 import { useState } from 'react';
 import {Button, Container, Nav, Navbar, NavDropdown} from 'react-bootstrap';
 import ModalLogin from '../Login/ModalLogin';
+import ModalRegistro from '../Registro/ModalRegistro';
 
 
 const Header = () =>{
   /*Necesarios para que el modal funcione */
-  const [show, setShow] = useState(false);
+  const [showLogin, setShowLogin] = useState();
+  const [showRegistro, setShowRegistro] = useState();
+  const handleCloseLogin = () => setShowLogin(false);
+  const handleShowLogin = () => setShowLogin(true);
+  const handleCloseRegistro = () => setShowRegistro(false);
+  const handleShowRegistro = () => setShowRegistro(true);
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
 /************************************************ */
   return (
       <>
@@ -32,14 +36,20 @@ const Header = () =>{
               </NavDropdown.Item>
             </NavDropdown>
 
-            <Button className='btn btn-outline-success' type='submit' onClick={() => handleShow()}> Iniciar sesion</Button>  {/*Boton para inicio de sesion */}
+            <Nav.Link end className='nav-item nav-link' onClick={handleShowLogin}>Login</Nav.Link>
+            {
+              showLogin  && <ModalLogin show={showLogin} handleClose={handleCloseLogin} handleShowRegistro={handleShowRegistro}></ModalLogin>
+            }
+            <Nav.Link end className='nav-item nav-link' onClick={handleShowRegistro}>Registrarse</Nav.Link>
+            {
+              showRegistro && <ModalRegistro show={showRegistro} handleClose={handleCloseRegistro}></ModalRegistro>
+            }
           </Nav>
         </Navbar.Collapse>
       </Container>
     </Navbar>
 
-    <ModalLogin show={show} handleClose={handleClose}/>
-    {/*Aqui se soluciona el error de usar mas de un componente con el fragment */}
+   
     </> 
   )
 }

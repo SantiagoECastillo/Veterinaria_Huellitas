@@ -1,9 +1,12 @@
 import { createContext, useEffect, useState, useContext } from "react";
 import axios from "axios";
-import { registerRequest } from '../helpers/query.js';
+import { registerRequest, loginRequest  } from '../helpers/query.js';
+/*import { useNavigate} from "react-router-dom";*/
+
 
 export const UsuarioContexto = createContext(); 
 
+/*const navegacion = useNavigate();*/ /*PROBAR si es necesaria la navegacion, ya que usamos modal, bastaria con solo cerrar el modal? ver si cambia algo con el navbar */
 
 export const usarUsuContext = () => {
     const contexto = useContext(UsuarioContexto);
@@ -14,7 +17,10 @@ export const usarUsuContext = () => {
 }
 
 const UsuariosContexto = ({children}) => {
-    const[usuario, setUsuario] = useState(null)
+    const[usuario, setUsuario] = useState();
+    /*const {autentificado, setAutentificado} = useState(false); /*Solo no sirve para saber si el usuario esta autentificado */
+    const [errorRegistro, setErrorRegistro] = useState([]);
+    const [errorLogin, setErrorLogin] = useState([]);
 
     /*
     const getUser = async () => {
@@ -28,14 +34,25 @@ const UsuariosContexto = ({children}) => {
     }
     */
 
-    const login = async (user) => {
+    const registrar = async (user) => {
         try {
             const response = await registerRequest(user);
             console.log(response.data)
             setUsuario(response.data)
-            /*setAutentificado(true)   */
         } catch (error) {
-            /*setErrorRegistro(error.response.data)*/
+            setErrorRegistro(error.response.data)
+        }
+    }
+
+    const login = async (user) => {
+        try {
+            const response = await loginRequest(user)
+            console.log(response)
+        } catch (error) {
+            if(Array.isArray(error.response.data)){
+                return setErrorLogin(error.response.data);
+            }
+            setErrorLogin([error.response.data.message])
         }
     }
 
@@ -49,7 +66,7 @@ const UsuariosContexto = ({children}) => {
     }, [])
 
     return (
-        <UsuarioContexto.Provider value={{usuario, setUsuario, logOut, login}}> 
+        <UsuarioContexto.Provider value={{usuario, setUsuario, logOut, login, errorLogin, registrar, errorRegistro}}> 
           {children}  
         </UsuarioContexto.Provider>
     );

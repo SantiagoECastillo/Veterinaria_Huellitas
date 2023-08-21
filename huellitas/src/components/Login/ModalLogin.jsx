@@ -1,6 +1,8 @@
 import {Form, Modal} from 'react-bootstrap';
 import { useContext, useState } from 'react';
+import { useForm } from 'react-hook-form';
 import { UsuarioContexto } from '../../Context/UsuariosContexto';
+import { usarUsuContext } from '../../Context/UsuariosContexto';
 import ModalRegistro from '../Registro/ModalRegistro';
 import gatoLogin from '../../imagenes/Gato-login.svg';
 import perroLoginn from '../../imagenes/Perro-img-login.svg';
@@ -10,13 +12,16 @@ import './ModalLogin.css';
 
 
 
-const ModalLogin = ({show, handleClose}) => {
+const ModalLogin = ({show, handleClose, handleShowRegistro}) => {
+  const {register, handleSubmit ,formState:{errors}, watch, reset} = useForm();
+  const { login, errorLogin} = usarUsuContext();
+
   const [correo, setCorreo] = useState();
   const [contrasenia, setcontrasenia] = useState();
 
   const {usuarios} = useContext(UsuarioContexto)
-
-  const handleSubmit = (evento) => {
+  
+  const onSubmit = (evento) => {
     evento.preventDefault()
     try {
       const usuario = usuarios.find(usuario => usuario.correo === correo && usuario.contrasena === contrasenia)
@@ -32,13 +37,12 @@ const ModalLogin = ({show, handleClose}) => {
     }
   }
 
-  /*LLamda al modal de registro*/
-  const [showReg, setShow] = useState(false);
+  const onSubmit2 = handleSubmit((data) => {
+    login(data) 
+  })
 
-  const handleCloseRegistro = () => setShow(false);
-  const handleShowRegistro = () => setShow(true);
-  /********************************************* */
-  const Reg = () =>{
+  const abrirRegistro = () =>{
+    /*reset() */
     handleClose();
     handleShowRegistro();
   }
@@ -57,37 +61,80 @@ const ModalLogin = ({show, handleClose}) => {
             <h2 className='text-center mt-3'>Iniciar Sesión</h2>
           </div>
           <Modal.Body className='px-5'>
-            <form onSubmit={handleSubmit}>
-              <div className='mb-3 input-group'>
-                <div className='input-group-text bg-info '>
-                  <img src={imgUsuarioLogin} alt="" className='imagenInputFormulario'/>
+
+            { 
+              errorLogin.map((error, i) => {
+                <div className='bg-red-500 p-2 text-white' key={i}> {error} </div>
+              })
+            }
+
+            <form onSubmit={onSubmit2}>
+
+
+              <div className="mb-3 input-group">
+                <div className="input-group-text bg-info">
+                  <img src={imgUsuarioLogin} alt="" className="imagenInputFormulario" />
                 </div>
-                <input type='email' className='form-control' name='email' aria-describedby='emanil' placeholder='Ingrese su correo' 
-                  onChange={(evento) => setCorreo(evento.target.value)} value={correo}
+                <input type="email" 
+                  className={`form-control ${errors.correo ? "is-invalid" : ""}`} 
+                  placeholder="Correo" name='correo' aria-describedby="correo" 
+                  {...register("correo", {
+                    required:{
+                      value: true,
+                      message: "El correo es requerido"
+                    },
+                    pattern:{
+                      value:/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+                      message:'El email proporcionado no es valido.'
+                    }
+                  })}
+                  
                 />
+                {
+                  errors.correo && (<p className="invalid-feedback text-red-500 my-1">{errors.correo.message}</p>)
+                }
               </div>
-              <div className='mb-3 input-group'>
-                <div className='input-group-text bg-info'>
-                  <img src={imgContraseñaLogin} alt="" className='imagenInputFormulario'/>
+
+              <div className="mb-3 input-group">
+                <div className="input-group-text bg-info">
+                  <img src={imgContraseñaLogin} alt="" className="imagenInputFormulario" />
                 </div>
-                <input type='password' className='form-control' name='contrasena' aria-describedby='contrasena' placeholder='Ingrese su contraseña'  
-                  onChange={(evento) => setcontrasenia(evento.target.value)} value={contrasenia}
+                <input type="password" 
+                    className={`form-control ${errors.contrasena ? "is-invalid" : ""}`} 
+                    placeholder="Contraseña" name='contrasena' aria-describedby="contrasena"
+                    {...register("contrasena",{
+                      required:{
+                        value: true,
+                        message: "La contraseña es requerida"
+                      },
+                      minLength: {
+                        value: 8,
+                        message: "La contraseña debe tener 8 caracteres minimo"
+                      },
+                      maxLength:{
+                        value: 20,
+                        message: "La contraseña debe tener como maximo 20 caracteres"
+                      }
+                    })}
+                  
                 />
+                { 
+                  errors.contrasena && (<p className="invalid-feedback text-red-500 my-1">{errors.contrasena.message}</p>)
+                }
               </div>
+
               <div className='d-flex flex-column justify-content-center mt-2'>
                 <button type='submit' className='btn btn-info mb-2 text-white'>Iniciar Sesión</button>
               </div>
             </form>
           </Modal.Body>
-          <div className='d-flex gap-1 justify-content-center my-3'>
+          <div className='d-flex gap-1 justify-content-center'>
             <p>¿No tienes cuenta aun?</p>
-            <a href='#' className='text-decoration-none fw-bold' onClick={() => Reg()}>Crear cuenta</a> {/*Logra cerrar el from, ver si puede abrir otro */}
+            <a href='#' className='text-decoration-none fw-bold' onClick={abrirRegistro}>Crear cuenta</a> {/*Logra cerrar el from, ver si puede abrir otro */}
           </div>
           </div>
         </Modal>
 
-        <ModalRegistro showReg={showReg} handleCloseRegistro={handleCloseRegistro}/>
-        
       </>
   )
 }
