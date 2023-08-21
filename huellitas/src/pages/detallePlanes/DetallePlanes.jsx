@@ -32,7 +32,7 @@ const Planes = () => {
               <div className="contenedorImgConcl">
                 <img className="imagenConclusion" src={imagenConclusion} />
                 <Button className="botonModal" onClick={modalDatos}>
-                  MAS INFO
+                  SABER MAS
                 </Button>
               </div>
             </div>
@@ -90,7 +90,7 @@ const Planes = () => {
         <div className="contenedorModalPlanes">
         <Modal.Header className="headerModalPlanes" closeButton>
           <Modal.Title className="tituloModalPlanes">
-            MAS INFO DE PLANES
+            Para más informacion:
           </Modal.Title>
         </Modal.Header>
         <Modal.Body className="bodyModalPlanes">
