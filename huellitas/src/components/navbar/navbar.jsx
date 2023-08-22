@@ -4,6 +4,7 @@ import NavbarLogoReducido from "../../images/navbarLogoReducido.png";
 import "./navbar.css";
 import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
+// agregar import de componentes que redirigan al modal de login y registro
 
 const EstructuraNavbar = () => {
   const navegar = useNavigate();
@@ -108,6 +109,7 @@ const EstructuraNavbar = () => {
               data-bs-target="#myModal"
             >
               INICIAR SESIÓN
+            {/* agregar enlace  a componente correspondiente al modal de login y registro */}
             </button>
           </Nav>
         </Navbar.Collapse>

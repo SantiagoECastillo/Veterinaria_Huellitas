@@ -7,13 +7,15 @@ import {
   faXTwitter,
   faInstagram
 } from "@fortawesome/free-brands-svg-icons";
-import { faClock, faMap } from "@fortawesome/free-regular-svg-icons";
+import { faClock, faMap, } from "@fortawesome/free-regular-svg-icons";
 import "./footer.css";
 import { useNavigate } from "react-router-dom";
 import EnviarMail from "../mail/EnviarMail";
 import { Modal, Button } from "react-bootstrap";
 import "leaflet/dist/leaflet.css";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import { faCode } from "@fortawesome/free-solid-svg-icons";
+// agregar import de componente sobrenosotros
 
 const Footer = () => {
   const navigate = useNavigate();
@@ -42,35 +44,35 @@ const Footer = () => {
     <footer className="container">
       <div className="footer-divider"></div>
       <div className="row">
-        <div className="col-md-4 text-center p-3">
+        <div className="col-md-4 text-center">
           <a href="/" onClick={redirigirAInicio}>
-            <img src={FooterLogo} alt="Logo" className="img-fluid w-50" />
+            <img src={FooterLogo} alt="Logo" className="img-fluid w-75" />
           </a>
           <div className="mt-3">
           <a
           href="#"
-          className="btn btn-success m-1"
+          className="btn btn-success m-2"
           onClick={redirigirAError404}
         >
           <FontAwesomeIcon icon={faWhatsapp} />
         </a>
             <a
               href="#"
-              className="btn btn-primary m-1"
+              className="btn btn-primary m-2"
               onClick={redirigirAError404}
             >
               <FontAwesomeIcon icon={faFacebook} />
             </a>
             <a
               href="#"
-              className="btn btn-dark m-1"
+              className="btn btn-dark m-2"
               onClick={redirigirAError404}
             >
               <FontAwesomeIcon icon={faXTwitter} />
             </a>
             <a
               href="#"
-              className="btn btn-danger btn-social m-1"
+              className="btn btn-danger btn-social m-2"
               onClick={redirigirAError404}
             >
               <FontAwesomeIcon icon={faInstagram} />
@@ -115,6 +117,7 @@ const Footer = () => {
               </h4>
             </div>
           </div>
+          <p className="cursiva">San Miguel de Tucumán:</p>
           <p className="estilo-link fw-bold" onClick={abrirModalMapa}>
             {ubicacion.nombre}
           </p>
@@ -149,6 +152,15 @@ const Footer = () => {
               </Button>
             </Modal.Footer>
           </Modal>
+          <FontAwesomeIcon
+          icon={faCode}
+          className="fa-lg color-icono mt-3"
+        />
+        <div className="mb-2">
+          <h4 >Acerca del equipo de desarrollo web</h4>
+          </div>
+          <p className="estilo-link fw-bold"> Sobre nosotros </p>
+         {/* agregar enlace  a componente sobre nosotros */}
         </div>
       </div>
     </footer>
