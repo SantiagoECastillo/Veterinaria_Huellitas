@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import FooterLogo from "../../images/footerLogo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
+  faWhatsapp,
   faFacebook,
   faXTwitter,
-  faInstagram,
+  faInstagram
 } from "@fortawesome/free-brands-svg-icons";
 import { faClock, faMap } from "@fortawesome/free-regular-svg-icons";
 import "./footer.css";
@@ -41,21 +42,28 @@ const Footer = () => {
     <footer className="container">
       <div className="footer-divider"></div>
       <div className="row">
-        <div className="col-md-4 text-center mb-4 p-3">
+        <div className="col-md-4 text-center p-3">
           <a href="/" onClick={redirigirAInicio}>
             <img src={FooterLogo} alt="Logo" className="img-fluid w-50" />
           </a>
           <div className="mt-3">
+          <a
+          href="#"
+          className="btn btn-success m-1"
+          onClick={redirigirAError404}
+        >
+          <FontAwesomeIcon icon={faWhatsapp} />
+        </a>
             <a
               href="#"
-              className="btn btn-primary btn-social m-1"
+              className="btn btn-primary m-1"
               onClick={redirigirAError404}
             >
               <FontAwesomeIcon icon={faFacebook} />
             </a>
             <a
               href="#"
-              className="btn btn-dark btn-social m-1"
+              className="btn btn-dark m-1"
               onClick={redirigirAError404}
             >
               <FontAwesomeIcon icon={faXTwitter} />
@@ -75,24 +83,20 @@ const Footer = () => {
             <div className="col-12 text-center">
               <FontAwesomeIcon
                 icon={faClock}
-                className="fa-lg color-icono mt-md-3 mt-lg-5"
+                className="fa-lg color-icono mt-md-3"
               />
             </div>
             <div className="col-12 text-center">
-              <h4 className="mt-3">
+              <h4 className="mb-3">
                 <i className="far fa-clock text-info"></i> Consultas
               </h4>
             </div>
           </div>
-          <p>
-            <span></span>Horarios de consulta:
-          </p>
-          <p>
-            <span></span>Lunes a Viernes: 8:00 - 17:00
-          </p>
-          <p>
-            <span></span>Sábados: 9:00 - 13:00
-          </p>
+          <p className="cursiva">Horarios de consulta:</p>
+          <p>Lunes a Viernes: 8:00 - 17:00</p>
+          <p>Sábados: 9:00 - 13:00</p>
+          <p className="mt-3 cursiva">Teléfono de contacto:</p>
+          <p className="mb-3">381-534-2027</p>
           <p className="estilo-link fw-bold">
             <EnviarMail />
           </p>
@@ -102,11 +106,11 @@ const Footer = () => {
             <div className="col-12 text-center">
               <FontAwesomeIcon
                 icon={faMap}
-                className="fa-lg color-icono mt-md-3 mt-lg-5"
+                className="fa-lg color-icono mt-md-3"
               />
             </div>
             <div className="col-12 text-center">
-              <h4 className="mt-3">
+              <h4 className="mb-3">
                 <i className="fas fa-map-marker-alt text-info"></i> Ubicación
               </h4>
             </div>
