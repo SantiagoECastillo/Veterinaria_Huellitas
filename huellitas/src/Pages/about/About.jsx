@@ -4,7 +4,7 @@ function About() {
   return (
     <>
       <div>
-        <h2 className="text-center my-4">Quienes somos?</h2>
+      <h2 className="text-center my-4"><b><u>¿Quiénes somos?</u></b></h2>
       </div>
 
       {/* Contenedor 1 */}
@@ -41,6 +41,8 @@ function About() {
       </div>
       {/* Fin de Contenedor 1 */}
 
+      <h2 className="text-center"><b><u>Nuestro equipo</u></b></h2>
+
       {/* Contenedor 2 */}
       <div className="container d-flex flex-wrap justify-content-center">
         <div className="d-flex mx-4 my-4">
@@ -51,9 +53,9 @@ function About() {
             <img
               src="/src/images/integrantes/pablo.jpg"
               alt="esteban"
-              className="fotoCircle mx-5 mt-4"
+              className="fotoCircle mx-4 mt-4"
             />
-            <h4 className="text-center mt-4">Pablo Decima</h4>
+            <h3 className="text-center mt-4"><b>Pablo Decima</b></h3>
             <p className="text-center">
             Médico veterinario
            </p>
@@ -66,9 +68,9 @@ function About() {
             style={{ width: "20rem", height: "23rem" }}
           >
             <img
-              src="/src/images/integrantes/danields.jpg"
+              src="/src/images/integrantes/daniell.jpg"
               alt="esteban"
-              className="fotoCircle mx-5 mt-4"
+              className="fotoCircle mx-4 mt-4"
             />
             <h3 className="text-center mt-4"><b>Daniel Spiner</b></h3>
             <p className="text-center">
@@ -85,9 +87,9 @@ function About() {
             <img
               src="/src/images/integrantes/Estebanp.jpg"
               alt="esteban"
-              className="fotoCircle mx-5 mt-4"
+              className="fotoCircle mx-4 mt-4"
             />
-            <h4 className="text-center mt-4">Esteban</h4>
+            <h3 className="text-center mt-4"><b>Esteban Pedraza</b></h3>
             <p className="text-center">
             Médico veterinario
            </p>
@@ -102,7 +104,15 @@ function About() {
             className="card fach cambiocolor"
             style={{ width: "20rem", height: "23rem" }}
           >
-            asdasd
+          <img
+              src="/src/images/integrantes/Estebanp.jpg"
+              alt="esteban"
+              className="fotoCircle mx-4 mt-4"
+            />
+            <h3 className="text-center mt-4"><b>Esteban Pedraza</b></h3>
+            <p className="text-center">
+            Auxiliar Veterinario
+           </p>
           </div>
         </div>
 
@@ -111,7 +121,15 @@ function About() {
             className="card fach cambiocolor"
             style={{ width: "20rem", height: "23rem" }}
           >
-            asdasd
+            <img
+              src="/src/images/integrantes/alberto.png"
+              alt="esteban"
+              className="fotoCircle mx-4 mt-4"
+            />
+            <h3 className="text-center mt-4"><b> Alberto Aguirre</b></h3>
+            <p className="text-center">
+            Auxiliar Veterinario
+           </p>
           </div>
         </div>
       </div>

@@ -18,10 +18,10 @@
     }
 
 .fotoCircle{
-    width: 240px;
+    width: 270px;
     height: 240px;
     overflow: hidden;
-    border-radius: 400px;
+    border-radius: 50px ;
 }
 
 h1{
