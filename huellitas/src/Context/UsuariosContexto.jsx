@@ -49,10 +49,7 @@ const UsuariosContexto = ({children}) => {
             const response = await loginRequest(user)
             console.log(response)
         } catch (error) {
-            if(Array.isArray(error.response.data)){
-                return setErrorLogin(error.response.data);
-            }
-            setErrorLogin([error.response.data.message])
+            setErrorLogin(error.response.data);
         }
     }
 
@@ -61,9 +58,10 @@ const UsuariosContexto = ({children}) => {
         window.location.href = "/" /*poner ruta del HOME aqui*/
     }
 
+    /*
     useEffect(() => {
-        /*getUser()*/
-    }, [])
+        
+    }, [])*/
 
     return (
         <UsuarioContexto.Provider value={{usuario, setUsuario, logOut, login, errorLogin, registrar, errorRegistro}}> 

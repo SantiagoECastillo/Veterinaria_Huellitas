@@ -62,12 +62,9 @@ const ModalLogin = ({show, handleClose, handleShowRegistro}) => {
           </div>
           <Modal.Body className='px-5'>
 
-            { 
-              errorLogin.map((error, i) => {
-                <div className='bg-red-500 p-2 text-white' key={i}> {error} </div>
-              })
-            }
-
+            {errorLogin.map((error, i) => (
+              <div className='p-2 text-danger text-center' key={i}> {error} </div>
+            ))}
             <form onSubmit={onSubmit2}>
 
 
