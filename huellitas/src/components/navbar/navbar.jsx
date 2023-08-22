@@ -4,6 +4,7 @@ import NavbarLogoReducido from "../../images/navbarLogoReducido.png";
 import "./navbar.css";
 import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
+// agregar import de componente turnos
 // agregar import de componentes que redirigan al modal de login y registro
 
 const EstructuraNavbar = () => {
@@ -92,6 +93,7 @@ const EstructuraNavbar = () => {
             <div className=" d-none d-lg-block">
               <Navbar.Brand href="#">
                 <a href="/" onClick={() => navegar("/")}>
+                {/* agregar enlace  a componente correspondiente a turnos y corregir ruta*/}
                   <img
                     src={NavbarLogo}
                     alt="Logo de Huellitas"

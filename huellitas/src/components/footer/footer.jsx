@@ -44,35 +44,35 @@ const Footer = () => {
     <footer className="container">
       <div className="footer-divider"></div>
       <div className="row">
-        <div className="col-md-4 text-center">
+        <div className="col-md-4 mt-3 mt-md-5 mt-lg-1 text-center">
           <a href="/" onClick={redirigirAInicio}>
-            <img src={FooterLogo} alt="Logo" className="img-fluid w-75" />
+            <img src={FooterLogo} alt="Logo" className="img-fluid w-50" />
           </a>
           <div className="mt-3">
           <a
           href="#"
-          className="btn btn-success m-2"
+          className="btn btn-success m-1"
           onClick={redirigirAError404}
         >
           <FontAwesomeIcon icon={faWhatsapp} />
         </a>
             <a
               href="#"
-              className="btn btn-primary m-2"
+              className="btn btn-primary m-1"
               onClick={redirigirAError404}
             >
               <FontAwesomeIcon icon={faFacebook} />
             </a>
             <a
               href="#"
-              className="btn btn-dark m-2"
+              className="btn btn-dark m-1"
               onClick={redirigirAError404}
             >
               <FontAwesomeIcon icon={faXTwitter} />
             </a>
             <a
               href="#"
-              className="btn btn-danger btn-social m-2"
+              className="btn btn-danger btn-social m-1"
               onClick={redirigirAError404}
             >
               <FontAwesomeIcon icon={faInstagram} />
