@@ -93,10 +93,7 @@ section {
 }
 
 .botonTurnos {
-    display: block;
-    margin: 0 auto;
-    margin-top: 20px;
-    width: 200px;
+    width: 70%;
     background-color: #01ddf4;
     color: white;
     border: none;
@@ -113,9 +110,10 @@ section {
 
 .boton {
     text-align: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 50px;
 }
+
+
 
 @media (min-width: 769px) {
     .container {
