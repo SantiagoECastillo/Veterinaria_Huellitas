@@ -97,7 +97,7 @@ function Formulario() {
               <Form.Group controlId="telefonoDueño">
                 <Form.Label>Teléfono</Form.Label>
                 <Form.Control
-                  type="tel"
+                  type="number"
                   name="telefonoDueño"
                   value={informacionDueño.telefonoDueño}
                   onChange={handleDueñoInputChange}
