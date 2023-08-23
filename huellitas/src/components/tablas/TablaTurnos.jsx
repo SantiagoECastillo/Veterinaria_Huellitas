@@ -31,6 +31,7 @@ const TablaTurnos = () => {
 
   return (
     <>
+      <h1>Turnos</h1>
       <div className="contenedorTablaTurnos">
         <Table
           responsive
@@ -92,6 +93,7 @@ const TablaTurnos = () => {
           </Modal.Body>
         </Modal>
       </div>
+     
     </>
   );
 };
