@@ -3,6 +3,8 @@ import imagenConclusion from "../../images/mujerconperro2.jpg";
 import "./DetallePlanes.css";
 import { useState } from "react";
 import ModalFormPlanes from "../../components/planes/ModalFormPlanes";
+import gatoLogin from "../../images/login/Gato-login.svg";
+import perroLoginn from "../../images/login//Perro-img-login.svg";
 
 const Planes = () => {
   const [show, setShow] = useState(false);
@@ -17,7 +19,7 @@ const Planes = () => {
   return (
     <>
       <main className="containerDetallePlanes container">
-          <h1>Nuestros Planes</h1>
+        <h1>Nuestros Planes</h1>
         <div className="row gx5">
           <div className="contenedorConclusion col">
             <div className="conclusion">
@@ -80,22 +82,34 @@ const Planes = () => {
           </div>
         </div>
       </main>
-      <Modal
-        className="modalPlanes"
-        centered
-        size="lg"
-        show={show}
-        onHide={handleClose}
-      >
+      
+      <Modal centered size="md" show={show} onHide={handleClose}>
         <div className="contenedorModalPlanes">
-        <Modal.Header className="headerModalPlanes" closeButton>
-          <Modal.Title className="tituloModalPlanes">
-            Para más informacion:
-          </Modal.Title>
-        </Modal.Header>
-        <Modal.Body className="bodyModalPlanes">
-          <ModalFormPlanes handleClose={handleClose} />
-        </Modal.Body>
+          <Modal.Header
+            className="headerModalPlanes border-bottom-0"
+            closeButton
+          >
+          </Modal.Header>
+          <div>
+            <div className="d-flex justify-content-center">
+              <img
+                src={gatoLogin}
+                alt="CaraDegato"
+                className="alturaImagen"
+              />
+              <img
+                src={perroLoginn}
+                alt="CaraDePerro"
+                className="alturaImagen"
+              />
+            </div>
+            <h2 className="contenedorTituloPlanes text-center mt-2">
+              MAS INFO DE PLANES
+            </h2>
+          </div>
+          <Modal.Body className="bodyModalPlanes">
+            <ModalFormPlanes handleClose={handleClose} />
+          </Modal.Body>
         </div>
       </Modal>
     </>

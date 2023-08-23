@@ -27,7 +27,7 @@ const ModalFormPlanes = ({ handleClose }) => {
           () => {
             Swal.fire({
               title: "¡Listo!",
-              text: "Formulario enviado con exito",
+              text: "¡Te enviamos mas información!",
               icon: "success",
               timer: 1000,
               showConfirmButton: false,

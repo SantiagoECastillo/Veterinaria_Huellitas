@@ -40,9 +40,9 @@
   border: 1px solid #ddd;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
-  margin-bottom: 20px; /* Aumentamos el margen inferior para más separación entre planes */
-  padding: 20px; /* Añadimos un espacio interno */
-  text-align: center; /* Centramos el contenido */
+  margin-bottom: 20px;
+  padding: 20px;
+  text-align: center;
 }
 
 .plan-name {
@@ -55,7 +55,7 @@
 .plan-description {
   font-family: 'Arial', sans-serif;
   font-size: 16px;
-  margin: 10px 20px; /* Ajustamos el margen vertical */
+  margin: 10px 20px;
   text-align: center;
 }
 
@@ -108,21 +108,9 @@
   font-size: 22px;
 }
 
-.modalPlanes {
-  background-color: #007bff30;
-}
-
 .contenedorModalPlanes {
+  background-color: #48c2bb;
   box-shadow: 5px 5px 5px grey;
-  border-radius: 10px;
-}
-
-.headerModalPlanes {
-  background-color: #0b91de;
-}
-
-.bodyModalPlanes {
-  background-color: #f5f5f5;
   border-radius: 10px;
 }
 
@@ -130,28 +118,46 @@
   color: black;
 }
 
+.alturaImagen{
+  height: 8rem;
+}
+
+.botonModalPlanes{
+  width: 100%;
+  background-color: #0b91de;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.botonModalTurnos:hover {
+
+  background-color: #0c64fa;
+}
+
 @media (max-width: 768px) {
   .plan-container {
-    padding: 15px; /* Reducimos el espacio interno en pantallas pequeñas */
+    padding: 15px;
   }
 }
 
 @media (max-width: 576px) {
   .plan-container {
-    margin-bottom: 10px; /* Reducimos el margen inferior en pantallas muy pequeñas */
-    padding: 15px; /* Reducimos el espacio interno en pantallas muy pequeñas */
+    margin-bottom: 10px;
+    padding: 15px;
   }
 
   .plan-name {
-    font-size: 18px; /* Reducimos el tamaño de fuente del título en pantallas muy pequeñas */
+    font-size: 18px;
   }
 
   .plan-description {
-    font-size: 14px; /* Reducimos el tamaño de fuente de la descripción en pantallas muy pequeñas */
+    font-size: 14px;
   }
 }
-
-/* ... Estilos anteriores ... */
 
 /* Estilos para dispositivos móviles */
 @media (max-width: 844px) {
@@ -175,7 +181,7 @@
   }
 
   .contenedorPlanes {
-    margin-top: 20px; /* Espacio entre el botón y los planes */
+    margin-top: 20px;
   }
 
   .plan-container {
