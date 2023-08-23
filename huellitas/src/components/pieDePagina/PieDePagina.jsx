@@ -1,14 +1,9 @@
+import "./estiloFooter.css";
 import React, { useState } from "react";
 import FooterLogo from "../../images/footerLogo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faWhatsapp,
-  faFacebook,
-  faXTwitter,
-  faInstagram
-} from "@fortawesome/free-brands-svg-icons";
+import { faWhatsapp, faFacebook, faXTwitter, faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { faClock, faMap, } from "@fortawesome/free-regular-svg-icons";
-import "./footer.css";
 import { useNavigate } from "react-router-dom";
 import EnviarMail from "../mail/EnviarMail";
 import { Modal, Button } from "react-bootstrap";
@@ -17,16 +12,9 @@ import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import { faCode } from "@fortawesome/free-solid-svg-icons";
 // agregar import de componente sobrenosotros
 
-const Footer = () => {
+const PieDePagina = () => {
+
   const navigate = useNavigate();
-
-  const redirigirAError404 = () => {
-    navigate("/error404");
-  };
-
-  const redirigirAInicio = () => {
-    navigate("/");
-  };
 
   const [mostrarModalMapa, setMostrarModalMapa] = useState(false);
 
@@ -41,44 +29,48 @@ const Footer = () => {
   };
 
   return (
-    <footer className="container">
+    <footer className="containerFooter">
       <div className="footer-divider"></div>
       <div className="row">
+
+        {/* Parte izquierda */}
         <div className="col-md-4 mt-3 mt-md-5 mt-lg-1 text-center">
-          <a href="/" onClick={redirigirAInicio}>
+          <div
+            className="estilo-link fw-bold"
+            onClick={() => navigate('/error404')}
+          >
             <img src={FooterLogo} alt="Logo" className="img-fluid w-50" />
-          </a>
+          </div>
           <div className="mt-3">
-          <a
-          href="#"
-          className="btn btn-success m-1"
-          onClick={redirigirAError404}
-        >
-          <FontAwesomeIcon icon={faWhatsapp} />
-        </a>
-            <a
-              href="#"
-              className="btn btn-primary m-1"
-              onClick={redirigirAError404}
+            <div
+              className="btn btn-success m-1 estilo-link"
+              onClick={() => navigate('/error404')}
+            >
+              <FontAwesomeIcon icon={faWhatsapp} />
+            </div>
+
+            <div
+              className="btn btn-success m-1 estilo-link"
+              onClick={() => navigate('/error404')}
             >
               <FontAwesomeIcon icon={faFacebook} />
-            </a>
-            <a
-              href="#"
-              className="btn btn-dark m-1"
-              onClick={redirigirAError404}
+            </div>
+            <div
+              className="btn btn-success m-1 estilo-link"
+              onClick={() => navigate('/error404')}
             >
               <FontAwesomeIcon icon={faXTwitter} />
-            </a>
-            <a
-              href="#"
-              className="btn btn-danger btn-social m-1"
-              onClick={redirigirAError404}
+            </div>
+            <div
+              className="btn btn-success m-1 estilo-link"
+              onClick={() => navigate('/error404')}
             >
               <FontAwesomeIcon icon={faInstagram} />
-            </a>
+            </div>
           </div>
         </div>
+
+        {/* Parte central */}
 
         <div className="col-md-4 text-center estilo-titulo4">
           <div className="row align-items-center">
@@ -94,15 +86,23 @@ const Footer = () => {
               </h4>
             </div>
           </div>
-          <p className="cursiva">Horarios de consulta:</p>
+          <p>Horarios de consulta:</p>
           <p>Lunes a Viernes: 8:00 - 17:00</p>
           <p>Sábados: 9:00 - 13:00</p>
-          <p className="mt-3 cursiva">Teléfono de contacto:</p>
+          <p className="mt-3 ">Teléfono de contacto:</p>
           <p className="mb-3">381-534-2027</p>
-          <p className="estilo-link fw-bold">
-            <EnviarMail />
-          </p>
+          <div
+            className="estilo-link fw-bold botonContactanos"
+            onClick={() => window.location.href = "/ruta-de-contacto"}
+            style={{ cursor: "pointer" }}
+          >
+            Contactanos
+          </div>
+
+
         </div>
+
+        {/* Parte derecha */}
         <div className="col-md-4 text-center estilo-titulo4">
           <div className="row align-items-center">
             <div className="col-12 text-center">
@@ -117,7 +117,7 @@ const Footer = () => {
               </h4>
             </div>
           </div>
-          <p className="cursiva">San Miguel de Tucumán:</p>
+          <p>San Miguel de Tucumán:</p>
           <p className="estilo-link fw-bold" onClick={abrirModalMapa}>
             {ubicacion.nombre}
           </p>
@@ -153,18 +153,23 @@ const Footer = () => {
             </Modal.Footer>
           </Modal>
           <FontAwesomeIcon
-          icon={faCode}
-          className="fa-lg color-icono mt-3"
-        />
-        <div className="mb-2">
-          <h4 >Acerca del equipo de desarrollo web</h4>
+            icon={faCode}
+            className="fa-lg color-icono mt-3"
+          />
+          <div className="mb-2">
+            <h4 >Acerca de</h4>
           </div>
-          <p className="estilo-link fw-bold"> Sobre nosotros </p>
-         {/* agregar enlace  a componente sobre nosotros */}
+          <div
+            className="estilo-link fw-bold"
+            onClick={() => window.location.href = "/ruta-de-contacto"}
+            style={{ cursor: "pointer" }}
+          >
+            Sobre Nosotros
+          </div>
         </div>
       </div>
     </footer>
   );
 };
 
-export default Footer;
+export default PieDePagina;

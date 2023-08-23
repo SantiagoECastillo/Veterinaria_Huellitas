@@ -1,22 +1,14 @@
+import "./estiloNavbar.css";
 import React from "react";
 import NavbarLogo from "../../images/navbarLogo.png";
 import NavbarLogoReducido from "../../images/navbarLogoReducido.png";
-import "./navbar.css";
 import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 // agregar import de componente turnos
 // agregar import de componentes que redirigan al modal de login y registro
 
-const EstructuraNavbar = () => {
-  const navegar = useNavigate();
-
-  const redirigirAError404 = () => {
-    navegar("/error404");
-  };
-
-  const redirigirAError404EnDropdown = () => {
-    redirigirAError404();
-  };
+const Header = () => {
+  const navigate = useNavigate();
 
   return (
     <Navbar expand="lg">
@@ -33,21 +25,21 @@ const EstructuraNavbar = () => {
               <NavDropdown.Item
                 className="text-center"
                 href="#"
-                onClick={redirigirAError404EnDropdown}
+
               >
                 Alimentos balanceados
               </NavDropdown.Item>
               <NavDropdown.Item
                 className="text-center"
                 href="#"
-                onClick={redirigirAError404EnDropdown}
+
               >
                 Accesorios
               </NavDropdown.Item>
               <NavDropdown.Item
                 className="text-center"
                 href="#"
-                onClick={redirigirAError404EnDropdown}
+
               >
                 Salud, Higiene y Estética
               </NavDropdown.Item>
@@ -61,21 +53,21 @@ const EstructuraNavbar = () => {
               <NavDropdown.Item
                 className="text-center"
                 href="#"
-                onClick={redirigirAError404EnDropdown}
+
               >
                 Laboratorio
               </NavDropdown.Item>
               <NavDropdown.Item
                 className="text-center"
                 href="#"
-                onClick={redirigirAError404EnDropdown}
+
               >
                 Peluquería
               </NavDropdown.Item>
               <NavDropdown.Item
                 className="text-center"
                 href="#"
-                onClick={redirigirAError404EnDropdown}
+
               >
                 Urgencias
               </NavDropdown.Item>
@@ -84,7 +76,7 @@ const EstructuraNavbar = () => {
             <Nav.Link
               className="fw-bold text-center"
               href="#"
-              onClick={redirigirAError404}
+
             >
               TURNOS
             </Nav.Link>
@@ -92,14 +84,13 @@ const EstructuraNavbar = () => {
           <div className="mx-auto">
             <div className=" d-none d-lg-block">
               <Navbar.Brand href="#">
-                <a href="/" onClick={() => navegar("/")}>
-                {/* agregar enlace  a componente correspondiente a turnos y corregir ruta*/}
-                  <img
-                    src={NavbarLogo}
-                    alt="Logo de Huellitas"
-                    className="img-fluid"
-                  />
-                </a>
+                <div
+                  className="estilo-link fw-bold"
+                  onClick={() => navigate('/error404')}
+                >
+                  <img src={NavbarLogo} alt="Logo" className="img-fluid" />
+                </div>
+  
               </Navbar.Brand>
             </div>
           </div>
@@ -111,12 +102,12 @@ const EstructuraNavbar = () => {
               data-bs-target="#myModal"
             >
               INICIAR SESIÓN
-            {/* agregar enlace  a componente correspondiente al modal de login y registro */}
+
             </button>
           </Nav>
         </Navbar.Collapse>
         <div className="d-lg-none mx-auto mt-0">
-          <Navbar.Brand href="#">
+          <Navbar.Brand href="/error404">
             <img
               src={NavbarLogoReducido}
               alt="Logo de Huellitas reducido"
@@ -129,4 +120,4 @@ const EstructuraNavbar = () => {
   );
 };
 
-export default EstructuraNavbar;
+export default Header;

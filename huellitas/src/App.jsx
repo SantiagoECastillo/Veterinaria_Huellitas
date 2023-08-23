@@ -1,9 +1,9 @@
 import React, { useLayoutEffect } from "react";
 import "./custom.scss";
 import "./App.css";
-import Navbar from "./components/navbar/Navbar";
-import Footer from "./components/footer/Footer";
 import Rutas from "./components/rutas/Rutas";
+import Header from "./components/header/Header";
+import PieDePagina from "./components/pieDePagina/PieDePagina";
 
 const App = () => {
   useLayoutEffect(() => {
@@ -12,9 +12,9 @@ const App = () => {
 
   return (
     <div>
-      <Navbar />
+      <Header />
       <Rutas />
-      <Footer />
+      <PieDePagina />
     </div>
   );
 };

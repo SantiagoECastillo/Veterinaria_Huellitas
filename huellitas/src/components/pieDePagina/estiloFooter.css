@@ -1,3 +1,6 @@
+.containerFooter{
+  background-color: #0b91de;
+}
 .margen footer {
   margin-top: 500px;
 }
@@ -11,7 +14,7 @@
 .estilo-titulo4 h4 {
   font-style: italic;
   margin-bottom: 5px;
-  color: #0b91de;
+  color: #ffffff;
 }
 
 p {
@@ -25,7 +28,7 @@ p {
 
 .estilo-link,
 .estilo-link * {
-  color: #0b91de;
+  color: #ffffff;
   text-decoration: underline;
   cursor: pointer;
   transition: color 0.2s ease-in-out;
@@ -33,10 +36,12 @@ p {
 
 .estilo-link:hover,
 .estilo-link:hover * {
-  color: #005eff;
+  color: #000000;
 }
 
-.cursiva {
-  font-style: italic;
+
+
+.botonContactanos {
+  margin-bottom: 20px;
 }
 
