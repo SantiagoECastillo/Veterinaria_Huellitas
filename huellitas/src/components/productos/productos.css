@@ -4,7 +4,12 @@
   overflow-x: auto;
   gap: 20px;
   width: 100%;
-  align-items: center; /* Centra verticalmente las tarjetas en el contenedor */
+  align-items: center;
+}
+.product-container h1 {
+  font-size: 64px;
+  text-align: center;
+  color: #0b91de;
 }
 
 .product-card {

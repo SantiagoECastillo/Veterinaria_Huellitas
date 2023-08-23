@@ -19,7 +19,7 @@ const Servicios = () => {
 
   return (
     <>
-      <div className="container">
+      <div className="containerServicios">
         <div className="informacionSimple">
           <img src="src/images/logo/Logo.jpg" alt="Logo de la Clínica" />
           <h1>Clínica Veterinaria</h1>

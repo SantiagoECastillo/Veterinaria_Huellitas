@@ -10,6 +10,7 @@ const Productos = () => {
 
     return (
         <div className="product-container col-12">
+            <h1>Productos Destacados</h1>
             {productos === undefined ? (
                 <h1>Sin productos</h1>
             ) : (

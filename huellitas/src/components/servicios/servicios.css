@@ -1,4 +1,4 @@
-.container {
+.containerServicios {
     display: grid;
     grid-template-columns: 1fr;
     gap: 20px;
@@ -116,7 +116,7 @@ section {
 
 
 @media (min-width: 769px) {
-    .container {
+    .containerServicios {
         grid-template-columns: 1fr 1fr;
     }
     .containerDetalles {
