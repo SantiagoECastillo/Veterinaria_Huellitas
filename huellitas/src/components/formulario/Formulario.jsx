@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import "./Formulario.css";
+
 
 function Formulario() {
   const [infoMascota, setMascotaInfo] = useState({
@@ -21,7 +23,7 @@ function Formulario() {
   };
 
   const handleResetForm = () => {
-    setInfoDueño({
+    setMascotaInfo({
       nombreMascota: "",
       especieMascota: "",
       tipoDeRaza: "",
@@ -30,7 +32,7 @@ function Formulario() {
     });
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     if (
       infoMascota.nombreMascota.trim() === "" ||
@@ -42,9 +44,17 @@ function Formulario() {
     ) {
       alert("Porfavor, complete los datos solicitados.");
     } else {
-      alert("Los datos se enviaron correctamente.");
-      console.log("Información de la mascota:", infoMascota);
-      handleResetForm();
+      console.log(infoMascota);
+      try {
+        const response = await axios.post("http://localhost:8081/api/mascotas", infoMascota);
+        setMascotaInfo(infoMascota)
+        alert("Los datos se enviaron correctamente.");
+        console.log("Información de la mascota:", response.data);
+        handleResetForm();
+      } catch (error) {
+        console.error("Error al enviar los datos:", error);
+        handleResetForm();
+      }
     }
   };
 
