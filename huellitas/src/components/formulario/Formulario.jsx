@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
+import "./Formulario.css";
 
 function Formulario() {
   const [informacionDueño, setInfoDueño] = useState({
@@ -11,7 +12,9 @@ function Formulario() {
 
   const [infoMascota, setMascotaInfo] = useState({
     nombreMascota: "",
-    tipoDeMascota: "",
+    especieMascota: "",
+    tipoDeRaza: "",
+    sexoMascota: "",
     edadMascota: "",
   });
 
@@ -31,6 +34,14 @@ function Formulario() {
     });
   };
 
+  const handleResetForm = () => {
+    setInfoDueño({
+      nombreDueño: "",
+      emailDueño: "",
+      telefonoDueño: "",
+    })
+  }
+
   const handleSubmit = (event) => {
     event.preventDefault();
     if (
@@ -40,15 +51,18 @@ function Formulario() {
       ) ||
       !informacionDueño.telefonoDueño.match(/^\d{10}$/) ||
       infoMascota.nombreMascota.trim() === "" ||
-      infoMascota.tipoDeMascota.trim() === "" ||
+      infoMascota.especieMascota.trim() === "" ||
+      infoMascota.tipoDeRaza.trim() === "" ||
+      infoMascota.sexoMascota.trim() === "" ||
       !Number.isInteger(parseInt(infoMascota.edadMascota)) ||
       parseInt(infoMascota.edadMascota) <= 0
     ) {
-      alert("Por favor, complete todos los campos correctamente.");
+      alert("Porfavor, complete los datos solicitados.");
     } else {
-      alert("Los datos se enviaron correctamente.")
+      alert("Los datos se enviaron correctamente.");
       console.log("Información del dueño:", informacionDueño);
       console.log("Información de la mascota:", infoMascota);
+      handleResetForm();
     }
   };
 
@@ -102,12 +116,39 @@ function Formulario() {
                   required
                 />
               </Form.Group>
-              <Form.Group controlId="tipoDeMascota">
-                <Form.Label>Tipo de Mascota</Form.Label>
+              <Form.Group controlId="especieMascota">
+                <Form.Label>Especie de la Mascota</Form.Label>
+                <Form.Control
+                  as="select"
+                  name="especieMascota"
+                  value={infoMascota.especieMascota}
+                  onChange={handleMascotaInputChange}
+                  required
+                >
+                  <option value="">Seleccionar Especie</option>
+                  <option value="Perro">Perro</option>
+                  <option value="Gato">Gato</option>
+                  <option value="Aves">Aves</option>
+                  <option value="Roedores">Roedores</option>
+                </Form.Control>
+              </Form.Group>
+
+              <Form.Group controlId="tipoDeRaza">
+                <Form.Label>Raza</Form.Label>
                 <Form.Control
                   type="text"
-                  name="tipoDeMascota"
-                  value={infoMascota.tipoDeMascota}
+                  name="tipoDeRaza"
+                  value={infoMascota.tipoDeRaza}
+                  onChange={handleMascotaInputChange}
+                  required
+                />
+              </Form.Group>
+              <Form.Group controlId="sexoMascota">
+                <Form.Label>Sexo</Form.Label>
+                <Form.Control
+                  type="text"
+                  name="sexoMascota"
+                  value={infoMascota.sexoMascota}
                   onChange={handleMascotaInputChange}
                   required
                 />
