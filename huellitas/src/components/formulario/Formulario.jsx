@@ -4,12 +4,6 @@ import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import "./Formulario.css";
 
 function Formulario() {
-  const [informacionDueño, setInfoDueño] = useState({
-    nombreDueño: "",
-    emailDueño: "",
-    telefonoDueño: "",
-  });
-
   const [infoMascota, setMascotaInfo] = useState({
     nombreMascota: "",
     especieMascota: "",
@@ -17,14 +11,6 @@ function Formulario() {
     sexoMascota: "",
     edadMascota: "",
   });
-
-  const handleDueñoInputChange = (event) => {
-    const { name, value } = event.target;
-    setInfoDueño({
-      ...informacionDueño,
-      [name]: value,
-    });
-  };
 
   const handleMascotaInputChange = (event) => {
     const { name, value } = event.target;
@@ -36,20 +22,17 @@ function Formulario() {
 
   const handleResetForm = () => {
     setInfoDueño({
-      nombreDueño: "",
-      emailDueño: "",
-      telefonoDueño: "",
-    })
-  }
+      nombreMascota: "",
+      especieMascota: "",
+      tipoDeRaza: "",
+      sexoMascota: "",
+      edadMascota: "",
+    });
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
     if (
-      informacionDueño.nombreDueño.trim() === "" ||
-      !informacionDueño.emailDueño.match(
-        /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/
-      ) ||
-      !informacionDueño.telefonoDueño.match(/^\d{10}$/) ||
       infoMascota.nombreMascota.trim() === "" ||
       infoMascota.especieMascota.trim() === "" ||
       infoMascota.tipoDeRaza.trim() === "" ||
@@ -60,7 +43,6 @@ function Formulario() {
       alert("Porfavor, complete los datos solicitados.");
     } else {
       alert("Los datos se enviaron correctamente.");
-      console.log("Información del dueño:", informacionDueño);
       console.log("Información de la mascota:", infoMascota);
       handleResetForm();
     }
@@ -71,41 +53,8 @@ function Formulario() {
       <Row className="justify-content-center">
         <Col md={8}>
           <div className="border rounded p-4">
-            <h1 className="text-center">Contactanos!</h1>
+            <h1 className="text-center">Información de la Mascota</h1>
             <Form onSubmit={handleSubmit}>
-              <h2>Información del Dueño</h2>
-              <Form.Group controlId="nombreDueño">
-                <Form.Label>Nombre</Form.Label>
-                <Form.Control
-                  type="text"
-                  name="nombreDueño"
-                  value={informacionDueño.nombreDueño}
-                  onChange={handleDueñoInputChange}
-                  required
-                />
-              </Form.Group>
-              <Form.Group controlId="emailDueño">
-                <Form.Label>Correo Electrónico</Form.Label>
-                <Form.Control
-                  type="email"
-                  name="emailDueño"
-                  value={informacionDueño.emailDueño}
-                  onChange={handleDueñoInputChange}
-                  required
-                />
-              </Form.Group>
-              <Form.Group controlId="telefonoDueño">
-                <Form.Label>Teléfono</Form.Label>
-                <Form.Control
-                  type="number"
-                  name="telefonoDueño"
-                  value={informacionDueño.telefonoDueño}
-                  onChange={handleDueñoInputChange}
-                  required
-                />
-              </Form.Group>
-
-              <h2>Información de la mascota</h2>
               <Form.Group controlId="nombreMascota">
                 <Form.Label>Nombre de la Mascota</Form.Label>
                 <Form.Control
