@@ -1,5 +1,4 @@
-import "./modalTurnos.css";
-import { useState , useRef  } from "react";
+import { useState, useRef } from "react";
 import Swal from "sweetalert2";
 import axios from "axios";
 import emailjs from "@emailjs/browser";
@@ -30,7 +29,7 @@ const ModalTurnos = ({ handleClose }) => {
       fecha.setHours(0, 0, 0, 0);
       fechaActual.setHours(0, 0, 0, 0);
 
-      if (fecha + 1 < fechaActual) {
+      if (fecha.getTime()  < fechaActual.getTime()) {
         setValidaFecha(
           "Los turnos se programan con al menos 24hs de anticipacion"
         );
@@ -43,23 +42,32 @@ const ModalTurnos = ({ handleClose }) => {
   const handleBlurHora = (e) => {
     if (e.target.name === "hora") {
       const hora = e.target.value;
-      const horaAbre = new Date(`2000-01-01T8:30`);
-      const horaCierra = new Date(`2000-01-01T20:30`);
-
-      const valorHora = new Date(`2000-01-01T${hora}`);
-
-      if (valorHora < horaAbre || valorHora > horaCierra) {
+      const [inputHour, inputMinute] = hora.split(":").map(Number);
+  
+      const horaAbre = { hour: 8, minute: 30 };
+      const horaCierra = { hour: 20, minute: 30 };
+      const inputTime = { hour: inputHour, minute: inputMinute };
+  
+      const timeToMillis = ({ hour, minute }) => hour * 60 * 60 * 1000 + minute * 60 * 1000;
+      
+      const inputTimeMillis = timeToMillis(inputTime);
+      const horaAbreMillis = timeToMillis(horaAbre);
+      const horaCierraMillis = timeToMillis(horaCierra);
+  
+      if (inputTimeMillis < horaAbreMillis || inputTimeMillis > horaCierraMillis) {
         setValidaHora("Horario de atención de 8:30 a 20:30");
       } else {
         setValidaHora("");
       }
     }
   };
-
+  
+  
   const handleSubmit = async (e) => {
 
     e.preventDefault();
-
+    
+    if(validaFecha === "" && validaHora === ""){
         try {
           const response = await axios.post(
             "http://localhost:8080/turnos",
@@ -71,7 +79,7 @@ const ModalTurnos = ({ handleClose }) => {
             hora: "",
             plan:""
           });
-          // emailjs.sendForm('service_lageyaf', 'template_wxgv40k', form.current, 'cNIQeHdmAGfezQvwz')
+          // emailjs.sendForm('service_h1i7c1u', 'template_ysl5w5s', form.current, '3ISQGDxm28JZUQxZw')
           Swal.fire({
             icon: "success",
             title: "¡Listo!",
@@ -80,38 +88,27 @@ const ModalTurnos = ({ handleClose }) => {
             timer: 1200
           });
           handleClose()
-          //  .then((result) => {
-          //    if (result.isConfirmed) {
-          //      window.location.href = "/";
-          //    }
-          //  });
         }
         catch (error) {
-        //   if (error.response) {
-        //     if (error.response.status === 400) {
-        //       Swal.fire({
-        //         icon: "error",
-        //         title: "Error!",
-        //         text: "No se puede sacar turno en un horario anterior al actual",
-        //         confirmButtonColor: "#C73333",
-        //         background: "#31302F",
-        //         color: "white",
-        //         backdrop: `rgba(0,0,14,0.4)`,
-        //       });
-        //     } else if (error.response.status === 409) {
-        //       Swal.fire({
-        //         icon: "error",
-        //         title: "Error!",
-        //         text: "Ya existe un turno con la misma fecha y hora",
-        //         confirmButtonColor: "#C73333",
-        //         background: "#31302F",
-        //         color: "white",
-        //         backdrop: `rgba(0,0,14,0.4)`,
-        //       });
-        //     }
-        //   }
+          if (error.response) {
+            if (error.response.status === 400) {
+              Swal.fire({
+                icon: "error",
+                title: "Error!",
+                text: "Asegurate de elegir el horario en el que esta abierta nuestra veterinaria",
+                confirmButtonColor: "#0056b3",
+              });
+            } else if (error.response.status === 409) {
+              Swal.fire({
+                icon: "error",
+                title: "Error!",
+                text: "Turno no disponible",
+                confirmButtonColor: "#0056b3",
+              });
+            }
+          }
         console.log(error)
-        }
+        }}
       };
 
   return (
@@ -162,6 +159,7 @@ const ModalTurnos = ({ handleClose }) => {
         <button type="submit" className="botonModalTurnos">
           RESERVAR
         </button>
+
       </form>
     </>
   );

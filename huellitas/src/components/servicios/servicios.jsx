@@ -4,6 +4,8 @@ import Button from "react-bootstrap/Button";
 import { Modal } from "react-bootstrap";
 import { useState } from "react";
 import ModalTurnos from "../turnos/ModalTurnos";
+import gatoLogin from "../../images/login/Gato-login.svg";
+import perroLoginn from "../../images/login//Perro-img-login.svg";
 
 const Servicios = () => {
 
@@ -59,22 +61,33 @@ const Servicios = () => {
           </section>
         </div>
       </div>
-      <Modal
-        className="modalTurnos"
-        centered
-        size="md"
-        show={show}
-        onHide={handleClose}
-      >
+      <Modal centered size="md" show={show} onHide={handleClose}>
         <div className="contenedorModalTurnos">
-        <Modal.Header className="headerModalTurnos" closeButton>
-          <Modal.Title className="tituloModalTurnos">
-            RESERVA DE TURNOS
-          </Modal.Title>
-        </Modal.Header>
-        <Modal.Body className="bodyModalTurnos">
-          <ModalTurnos handleClose={handleClose} />
-        </Modal.Body>
+          <Modal.Header
+            className="headerModalTurnos border-bottom-0"
+            closeButton
+          >
+            <div>
+              <div className="contenedorImagenesTurnos">
+                <img
+                  src={gatoLogin}
+                  alt="CaraDegato"
+                  className="alturaImagen"
+                />
+                <img
+                  src={perroLoginn}
+                  alt="CaraDePerro"
+                  className="alturaImagen"
+                />
+              </div>
+              <h2 className="contenedorTituloTurnos text-center mt-2">
+                TURNOS
+              </h2>
+            </div>
+          </Modal.Header>
+          <Modal.Body className="bodyModalTurnos">
+            <ModalTurnos handleClose={handleClose} />
+          </Modal.Body>
         </div>
       </Modal>
     </>
