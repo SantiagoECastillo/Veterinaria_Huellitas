@@ -25,7 +25,6 @@
 
 .conclusion {
   width: 100%;
-  height: 100%;
   flex-direction: column;
   align-items: center;
 }
@@ -40,14 +39,10 @@
   background-color: #f5f5f5;
   border: 1px solid #ddd;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
   border-radius: 10px;
-  margin-bottom: 12px;
-  height: 33%;
-  width: 100%;
+  margin-bottom: 20px; /* Aumentamos el margen inferior para más separación entre planes */
+  padding: 20px; /* Añadimos un espacio interno */
+  text-align: center; /* Centramos el contenido */
 }
 
 .plan-name {
@@ -60,10 +55,8 @@
 .plan-description {
   font-family: 'Arial', sans-serif;
   font-size: 16px;
-  margin-left: 5px;
-  margin-right: 5px;
+  margin: 10px 20px; /* Ajustamos el margen vertical */
   text-align: center;
-  margin-bottom: 8vh;
 }
 
 .contenedorImgConcl {
@@ -72,13 +65,12 @@
 }
 
 .imagenConclusion {
-  width: 98vh;
-  height: 84vh;
+  width: 100%;
+  height: auto;
   border-radius: 10px;
   opacity: 0.7;
   transition: opacity 0.3s ease-in-out;
   background-color: rgba(0, 0, 255, 0);
-  ;
 }
 
 .botonModal {
@@ -93,7 +85,7 @@
   border: none;
   height: 100%;
   width: 100%;
-  font: bold;
+  font-weight: bold;
 }
 
 .botonModal:hover {
@@ -102,7 +94,6 @@
   font-size: 50px;
   color: #f5f5f5;
 }
-
 
 .textoConclusion {
   background-color: #f5f5f5;
@@ -139,60 +130,72 @@
   color: black;
 }
 
-
-
-@media (min-width: 360px) and (max-width: 499px) {
-  .imagenConclusion {
-    width: 41.5vh;
-    height: 43vh;
-  }
-
-  .contenedorPlanes {
-    margin-top: 2vh;
+@media (max-width: 768px) {
+  .plan-container {
+    padding: 15px; /* Reducimos el espacio interno en pantallas pequeñas */
   }
 }
 
-@media (min-width: 500px) and (max-width: 780px) {
-  .imagenConclusion {
-    width: 69vh;
-    height: 50vh;
+@media (max-width: 576px) {
+  .plan-container {
+    margin-bottom: 10px; /* Reducimos el margen inferior en pantallas muy pequeñas */
+    padding: 15px; /* Reducimos el espacio interno en pantallas muy pequeñas */
   }
 
-  .contenedorPlanes {
-    margin-top: 2vh;
-  }
-}
-
-@media (min-width: 781px) and (max-width: 850px) {
-  .imagenConclusion {
-    width: 66vh;
-    height: 50vh;
+  .plan-name {
+    font-size: 18px; /* Reducimos el tamaño de fuente del título en pantallas muy pequeñas */
   }
 
-  .contenedorPlanes {
-    margin-top: 2vh;
+  .plan-description {
+    font-size: 14px; /* Reducimos el tamaño de fuente de la descripción en pantallas muy pequeñas */
   }
 }
 
-@media (min-width: 851px) and (max-width: 1000px) {
-  .imagenConclusion {
-    width: 63vh;
-    height: 50vh;
+/* ... Estilos anteriores ... */
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 844px) {
+  .contenedorConclusion {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .conclusion {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contenedorImgConcl {
+    margin-bottom: 10px;
+  }
+
+  .botonModal {
+    width: 100%;
+    margin-bottom: 10px;
   }
 
   .contenedorPlanes {
-    margin-top: 2vh;
+    margin-top: 20px; /* Espacio entre el botón y los planes */
   }
-}
 
-@media (width: 1280px) and (height: 800px) {
+  .plan-container {
+    width: 100%;
+    margin-bottom: 20px;
+  }
 
   .textoConclusion {
-    justify-content: center;
-    height: 19vh;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 10px;
   }
 
   .imagenConclusion {
-    height: 100vh;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    opacity: 0.7;
+    transition: opacity 0.3s ease-in-out;
+    background-color: rgba(0, 0, 255, 0);
   }
 }
