@@ -24,21 +24,21 @@ const Header = () => {
             >
               <NavDropdown.Item
                 className="text-center"
-                href="#"
+                href="/error404"
 
               >
                 Alimentos balanceados
               </NavDropdown.Item>
               <NavDropdown.Item
                 className="text-center"
-                href="#"
+                href="/error404"
 
               >
                 Accesorios
               </NavDropdown.Item>
               <NavDropdown.Item
                 className="text-center"
-                href="#"
+                href="/error404"
 
               >
                 Salud, Higiene y Estética
@@ -52,21 +52,21 @@ const Header = () => {
             >
               <NavDropdown.Item
                 className="text-center"
-                href="#"
+                href="/error404"
 
               >
                 Laboratorio
               </NavDropdown.Item>
               <NavDropdown.Item
                 className="text-center"
-                href="#"
+                href="/error404"
 
               >
                 Peluquería
               </NavDropdown.Item>
               <NavDropdown.Item
                 className="text-center"
-                href="#"
+                href="/error404"
 
               >
                 Urgencias
