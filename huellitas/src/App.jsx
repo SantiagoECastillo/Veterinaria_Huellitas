@@ -27,19 +27,19 @@ const App = () => {
 
 
       <ContextoMascotas>
-    <UsuariosContexto>
-        <ContextoUsuarios>
-          <ContextoTurnos>
-            <ProductosContexto>
-              <Header />
-              <PaginaPrincipal />
-  
-              <Rutas />
-              <PieDePagina />
-            </ProductosContexto>
-          </ContextoTurnos>
-        </ContextoUsuarios>
-    </UsuariosContexto>
+        <UsuariosContexto>
+          <ContextoUsuarios>
+            <ContextoTurnos>
+              <ProductosContexto>
+                <Header />
+                <PaginaPrincipal />
+                <Rutas />
+
+                <PieDePagina />
+              </ProductosContexto>
+            </ContextoTurnos>
+          </ContextoUsuarios>
+        </UsuariosContexto>
       </ContextoMascotas>
 
 
