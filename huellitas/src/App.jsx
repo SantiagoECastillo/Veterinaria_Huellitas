@@ -13,6 +13,7 @@ import Rutas from "./components/rutas/Rutas";
 import Header from "./components/header/Header";
 import PieDePagina from "./components/pieDePagina/PieDePagina";
 import Productos from './components/productos/Productos';
+import Planes from './pages/detallePlanes/DetallePlanes'
 import Error404 from "./Pages/Error404/Error404"
 
 const App = () => {
@@ -20,9 +21,11 @@ const App = () => {
     document.body.style.backgroundColor = "white";
   }, []);
 
+
   return (
 
     <>
+
 
       <ContextoMascotas>
         <ContextoUsuarios>
@@ -30,12 +33,14 @@ const App = () => {
             <ProductosContexto>
               <Header />
               <MisMascotas />
+              <Planes/>
               <Rutas />
               <PieDePagina />
             </ProductosContexto>
           </ContextoTurnos>
         </ContextoUsuarios>
       </ContextoMascotas>
+
 
     </>
 

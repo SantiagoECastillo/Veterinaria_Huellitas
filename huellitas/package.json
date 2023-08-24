@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "@emailjs/browser": "^3.11.0",
+
+
     "@fortawesome/fontawesome-free": "^6.4.2",
     "@fortawesome/fontawesome-svg-core": "^6.4.2",
     "@fortawesome/free-brands-svg-icons": "^6.4.2",
@@ -30,6 +32,7 @@
     "react-router-dom": "^6.15.0",
     "sweetalert2": "^11.7.27",
     "vite-plugin-fonts": "^0.7.0"
+
   },
   "devDependencies": {
     "@types/react": "^18.2.15",
