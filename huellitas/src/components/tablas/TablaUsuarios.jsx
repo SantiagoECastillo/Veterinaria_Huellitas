@@ -1,31 +1,31 @@
 import { useContext, useState } from "react";
 import { Button, Table, Modal } from "react-bootstrap";
-import { ContextoTurnos } from "../context/TurnosContext";
-import FormEditarTurnos from "../turnos/FormEditarTurnos";
+import { ContextoUsuarios } from "../context/UsuariosContext";
+import FormEditarUsuarios from "../turnos/FormEditarUsuarios";
 import Swal from "sweetalert2";
-import "./tablaTurnos.css";
+import "./estiloTablas.css";
 
 const TablaUsuarios = () => {
-    const { turnos, eliminarTurnos } = useContext(ContextoTurnos);
+    const { usuarios, eliminarUsuarios } = useContext(ContextoUsuarios);
 
-    const [edicionTurno, setEdicionTurno] = useState();
+    const [edicionUsuario, setEdicionUsuario] = useState();
 
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
-    const handleEdit = (turno) => {
-        setEdicionTurno(turno);
+    const handleEdit = (usuario) => {
+        setEdicionUsuario(usuario);
         handleShow();
     };
 
     const handleDelete = (id) => {
-        eliminarTurnos(id);
+        eliminarUsuarios(id);
         Swal.fire({
             position: "center",
             icon: "success",
-            title: "Turno eliminado",
+            title: "Usuario eliminado",
         });
     };
 
@@ -33,14 +33,14 @@ const TablaUsuarios = () => {
         <>
             <h1>Usuarios</h1>
 
-            <div className="contenedorTablaTurnos">
+            <div className="contenedorTablaAdmin">
                 <Table
                     responsive
                     striped
-                    className="table-hover text-center table-dark tablaTurnos"
+                    className="table-hover text-center table-dark tablaAdmin"
                 >
                     <thead>
-                        <tr className="filaTurnos">
+                        <tr className="filaAdmin">
                             <th></th>
                             <th>Nombre</th>
                             <th>Apellido</th>
@@ -50,22 +50,24 @@ const TablaUsuarios = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {turnos.map((turno) => (
-                            <tr className="columnaTurnos" key={turno.id}>
+                        {turnos.map((usuario) => (
+                            <tr className="columnaAdmin" key={usuario.id}>
                                 <td></td>
-                                <td data-label="Fecha">{turno.fecha}</td>
-                                <td data-label="hora">{turno.hora} </td>
-                                <td data-label="plan">{turno.plan}</td>
+                                <td data-label="Nombre">{usuario.nombre}</td>
+                                <td data-label="Apellido">{usuario.apellido} </td>
+                                <td data-label="Correo">{usuario.correo}</td>
+                                <td data-label="Telefono">{usuario.telefono}</td>
+                                <td data-label="Contraseña">{usuario.contraseña}</td>
                                 <td>
                                     <Button
-                                        className="botonEditarTurnos me-2"
-                                        onClick={() => handleEdit(turno)}
+                                        className="botonEditarAdmin me-2"
+                                        onClick={() => handleEdit(usuario)}
                                     >
                                         Editar
                                     </Button>
                                     <Button
-                                        className="botonEliminarTurnos"
-                                        onClick={() => handleDelete(turno.id)}
+                                        className="botonEliminarAdmin"
+                                        onClick={() => handleDelete(usuario.id)}
                                     >
                                         Eliminar
                                     </Button>
@@ -75,21 +77,21 @@ const TablaUsuarios = () => {
                     </tbody>
                 </Table>
             </div>
-            <div className="contenedorModalEdiTurnos">
+            <div className="contenedorModalEdiAdmin">
                 <Modal
-                    className="modalEditarTurnos"
+                    className="modalEditarAdmin"
                     centered
                     show={show}
                     onHide={handleClose}
                 >
-                    <Modal.Header className="headerModalEdiTurnos" closeButton>
-                        <Modal.Title className="tituloModalEdiTurnos">
+                    <Modal.Header className="headerModalEdiAdmin" closeButton>
+                        <Modal.Title className="tituloModalEdiAdmin">
                             MODIFICAR USUARIO
                         </Modal.Title>
                     </Modal.Header>
-                    <Modal.Body className="bodyModalEdiTurnos">
-                        <FormEditarTurnos
-                            edicionTurno={edicionTurno}
+                    <Modal.Body className="bodyModalEdiAdmin">
+                        <FormEditarUsuarios
+                            edicionUsuario={edicionUsuario}
                             handleClose={handleClose}
                         />{" "}
                     </Modal.Body>

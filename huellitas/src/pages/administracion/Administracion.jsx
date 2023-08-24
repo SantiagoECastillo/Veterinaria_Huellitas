@@ -1,4 +1,6 @@
+import TablaMascotas from "../../components/tablas/TablaMascotas";
 import TablaTurnos from "../../components/tablas/TablaTurnos";
+import TablaUsuarios from "../../components/tablas/TablaUsuarios";
 
 
 const Administracion = () => {
@@ -6,6 +8,8 @@ const Administracion = () => {
         <>
         <h1>Administracion</h1>
         <TablaTurnos />
+        {/* <TablaUsuarios /> */}
+        {/* <TablaMascotas /> */}
         </>
     );
 };

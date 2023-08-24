@@ -3,7 +3,7 @@ import { Button, Table, Modal } from "react-bootstrap";
 import { ContextoTurnos } from "../context/TurnosContext";
 import FormEditarTurnos from "../turnos/FormEditarTurnos";
 import Swal from "sweetalert2";
-import "./tablaTurnos.css";
+import "./estiloTablas.css";
 
 const TablaTurnos = () => {
   const { turnos, eliminarTurnos } = useContext(ContextoTurnos);
@@ -32,14 +32,14 @@ const TablaTurnos = () => {
   return (
     <>
       <h1>Turnos</h1>
-      <div className="contenedorTablaTurnos">
+      <div className="contenedorTablaAdmin">
         <Table
           responsive
           striped
-          className="table-hover text-center table-dark tablaTurnos"
+          className="table-hover text-center table-dark tablaAdmin"
         >
           <thead>
-            <tr className="filaTurnos">
+            <tr className="filaAdmin">
               <th></th>
               <th>Fecha</th>
               <th>Hora</th>
@@ -49,20 +49,20 @@ const TablaTurnos = () => {
           </thead>
           <tbody>
             {turnos.map((turno) => (
-              <tr className="columnaTurnos" key={turno.id}>
+              <tr className="columnaAdmin" key={turno.id}>
                 <td></td>
                 <td data-label="Fecha">{turno.fecha}</td>
                 <td data-label="hora">{turno.hora} </td>
                 <td data-label="plan">{turno.plan}</td>
                 <td>
                   <Button
-                    className="botonEditarTurnos me-2"
+                    className="botonEditarAdmin me-2"
                     onClick={() => handleEdit(turno)}
                   >
                     Editar
                   </Button>
                   <Button
-                    className="botonEliminarTurnos"
+                    className="botonEliminarAdmin"
                     onClick={() => handleDelete(turno.id)}
                   >
                     Eliminar
@@ -73,19 +73,19 @@ const TablaTurnos = () => {
           </tbody>
         </Table>
       </div>
-      <div className="contenedorModalEdiTurnos">
+      <div className="contenedorModalEdiAdmin">
         <Modal
-          className="modalEditarTurnos"
+          className="modalEditarAdmin"
           centered
           show={show}
           onHide={handleClose}
         >
-          <Modal.Header className="headerModalEdiTurnos" closeButton>
-            <Modal.Title className="tituloModalEdiTurnos">
+          <Modal.Header className="headerModalEdiAdmin" closeButton>
+            <Modal.Title className="tituloModalEdiAdmin">
               MODIFICAR TURNO
             </Modal.Title>
           </Modal.Header>
-          <Modal.Body className="bodyModalEdiTurnos">
+          <Modal.Body className="bodyModalEdiAdmin">
             <FormEditarTurnos
               edicionTurno={edicionTurno}
               handleClose={handleClose}
@@ -93,7 +93,7 @@ const TablaTurnos = () => {
           </Modal.Body>
         </Modal>
       </div>
-     
+
     </>
   );
 };

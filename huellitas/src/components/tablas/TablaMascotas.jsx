@@ -1,31 +1,31 @@
 import { useContext, useState } from "react";
 import { Button, Table, Modal } from "react-bootstrap";
-import { ContextoTurnos } from "../context/TurnosContext";
-import FormEditarTurnos from "../turnos/FormEditarTurnos";
+import { ContextoMascotas } from "../context/MascotasContext";
+import FormEditarMascotas from "../turnos/FormEditarMascotas";
 import Swal from "sweetalert2";
-import "./tablaTurnos.css";
+import "./estiloTablas.css";
 
 const TablaMascotas = () => {
-    const { turnos, eliminarTurnos } = useContext(ContextoTurnos);
+    const { mascotas, eliminarMascotas } = useContext(ContextoMascotas);
 
-    const [edicionTurno, setEdicionTurno] = useState();
+    const [edicionMascota, setEdicionMascota] = useState();
 
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
-    const handleEdit = (turno) => {
-        setEdicionTurno(turno);
+    const handleEdit = (mascota) => {
+        setEdicionMascota(mascota);
         handleShow();
     };
 
     const handleDelete = (id) => {
-        eliminarTurnos(id);
+        eliminarMascotas(id);
         Swal.fire({
             position: "center",
             icon: "success",
-            title: "Turno eliminado",
+            title: "Mascota eliminada",
         });
     };
 
@@ -33,14 +33,14 @@ const TablaMascotas = () => {
         <>
             <h1>Mascotas</h1>
 
-            <div className="contenedorTablaTurnos">
+            <div className="contenedorTablaAdmin">
                 <Table
                     responsive
                     striped
-                    className="table-hover text-center table-dark tablaTurnos"
+                    className="table-hover text-center table-dark tablaAdmin"
                 >
                     <thead>
-                        <tr className="filaTurnos">
+                        <tr className="filaAdmin">
                             <th></th>
                             <th>Nombre</th>
                             <th>Sexo</th>
@@ -50,22 +50,24 @@ const TablaMascotas = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {turnos.map((turno) => (
-                            <tr className="columnaTurnos" key={turno.id}>
+                        {mascotas.map((mascota) => (
+                            <tr className="columnaAdmin" key={mascota.id}>
                                 <td></td>
-                                <td data-label="Fecha">{turno.fecha}</td>
-                                <td data-label="hora">{turno.hora} </td>
-                                <td data-label="plan">{turno.plan}</td>
+                                <td data-label="Nombre">{mascota.nombre}</td>
+                                <td data-label="Sexo">{mascota.sexo} </td>
+                                <td data-label="Edad">{mascota.edad}</td>
+                                <td data-label="Especie">{mascota.especie}</td>
+                                <td data-label="Raza">{mascota.raza}</td>
                                 <td>
                                     <Button
-                                        className="botonEditarTurnos me-2"
-                                        onClick={() => handleEdit(turno)}
+                                        className="botonEditarAdmin me-2"
+                                        onClick={() => handleEdit(mascota)}
                                     >
                                         Editar
                                     </Button>
                                     <Button
-                                        className="botonEliminarTurnos"
-                                        onClick={() => handleDelete(turno.id)}
+                                        className="botonEliminarAdmin"
+                                        onClick={() => handleDelete(mascota.id)}
                                     >
                                         Eliminar
                                     </Button>
@@ -75,21 +77,21 @@ const TablaMascotas = () => {
                     </tbody>
                 </Table>
             </div>
-            <div className="contenedorModalEdiTurnos">
+            <div className="contenedorModalEdiAdmin">
                 <Modal
-                    className="modalEditarTurnos"
+                    className="modalEditarAdmin"
                     centered
                     show={show}
                     onHide={handleClose}
                 >
-                    <Modal.Header className="headerModalEdiTurnos" closeButton>
-                        <Modal.Title className="tituloModalEdiTurnos">
+                    <Modal.Header className="headerModalEdiAdmin" closeButton>
+                        <Modal.Title className="tituloModalEdiAdmin">
                             MODIFICAR MASCOTA
                         </Modal.Title>
                     </Modal.Header>
-                    <Modal.Body className="bodyModalEdiTurnos">
-                        <FormEditarTurnos
-                            edicionTurno={edicionTurno}
+                    <Modal.Body className="bodyModalEdiAdmin">
+                        <FormEditarMascotas
+                            edicionMascota={edicionMascota}
                             handleClose={handleClose}
                         />{" "}
                     </Modal.Body>
