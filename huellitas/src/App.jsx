@@ -1,7 +1,7 @@
 import './App.css'
 import Planes from './pages/detallePlanes/DetallePlanes'
 
-function App() {
+const App = () => {
   
   return (
     <>
