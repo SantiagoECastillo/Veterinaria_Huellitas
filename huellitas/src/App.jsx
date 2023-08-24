@@ -1,13 +1,14 @@
 import "bootstrap/dist/css/bootstrap.min.css"
 import { useState } from 'react'
+import About from "./Pages/about/About"
 
 
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = ()=> {
 
   return (
     <>
+    <About/>
 
     </>
 

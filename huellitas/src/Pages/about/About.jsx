@@ -68,7 +68,7 @@ function About() {
             style={{ width: "20rem", height: "23rem" }}
           >
             <img
-              src="/src/images/integrantes/Estebanp.jpg"
+              src="/src/images/integrantes/santiago.jpg"
               alt="esteban"
               className="fotoCircle mx-4 mt-4"
             />
