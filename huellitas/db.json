@@ -1,4 +1,7 @@
 {
+  "usuarios": [
+  ],
+
   "productos": [
     {
       "marca": "Royal canin",
@@ -67,16 +70,7 @@
       "id": 7
     }
   ],
-  "usuarios": [
-    {
-      "nombre": "pablo",
-      "apellido": "decima",
-      "correo": "pablo@pablo.com",
-      "telefono": "123",
-      "contraseña": "pablo",
-      "id": 1
-    }
-  ],
+
   "mascotas": [
     {
       "nombre": "coco",
