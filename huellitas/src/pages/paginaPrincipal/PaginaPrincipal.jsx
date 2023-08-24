@@ -17,7 +17,6 @@ const PaginaPrincipal = () => {
 
   return (
     <>
-      <h1>Página principal</h1>
       <Carrusel />
       
       <div className="conteinerText">
