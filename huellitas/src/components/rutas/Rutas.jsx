@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import RegistroProductos from "../registroProductos/RegistroProductos";
 import PaginaPrincipal from "../../pages/paginaPrincipal/PaginaPrincipal";
 import Administracion from "../../pages/administracion/Administracion";

@@ -1,0 +1,9 @@
+@import '../node_modules/bootstrap/scss/functions';
+@import '../node_modules/bootstrap/scss/variables';
+
+
+$font-family-base: 'Poppins', 'sans-serif';
+$bs-body-font-family: $font-family-base;
+
+@import '../node_modules/bootstrap/scss/bootstrap.scss';
+
