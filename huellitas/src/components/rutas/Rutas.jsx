@@ -1,29 +1,19 @@
-import React from "react";
-import { Routes, Route, Navigate } from "react-router-dom";
-// import Error404 from "../../pages/Error404/Error404"; 
-// import ModalLogin from "../../components/Login/ModalLogin";
+import { Routes, Route } from "react-router-dom";
+import RegistroProductos from "../registroProductos/RegistroProductos";
+import PaginaPrincipal from "../../pages/paginaPrincipal/PaginaPrincipal";
+import Administracion from "../../pages/administracion/Administracion";
+// import DetallePlanes from "../../pages/detallePlanes/DetallePlanes";
 
 const Rutas = () => {
-  return (
-    <Routes>
-      {/* Ruta de redirección */}
-      <Route path="/index.html" element={null} />
+    return(
+        <Routes>
+            <Route path="/" element={<PaginaPrincipal />}/>
+            <Route path="/registroProductos" element={<RegistroProductos />}/>
+            {/* <Route path="/detallesPlanes" element={<DetallePlanes />}/> */}
+            <Route path="/administracion" element={<Administracion />}/>
+        </Routes>
 
-      {/* Ruta para la URL raíz ("/") */}
-      <Route path="/" element={<Navigate to="/index.html" />} />
+    )
+}
 
-      {/* 
-      Ruta para ModalLogin
-      <Route path="/login/modal" element={<ModalLogin />} />
-      */}
-
-      {/* Otras rutas */}
-      {/* <Route path="/error404" element={<Error404 />} /> */}
-
-      {/* Redirección para rutas inexistentes */}
-      {/* <Route path="*" element={<Navigate to="/error404" />} /> */}
-    </Routes>
-  );
-};
-
-export default Rutas;
+export default Rutas
