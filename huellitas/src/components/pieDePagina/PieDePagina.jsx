@@ -5,7 +5,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faWhatsapp, faFacebook, faXTwitter, faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { faClock, faMap, } from "@fortawesome/free-regular-svg-icons";
 import { useNavigate } from "react-router-dom";
-import EnviarMail from "../mail/EnviarMail";
 import { Modal, Button } from "react-bootstrap";
 import "leaflet/dist/leaflet.css";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";

@@ -1,6 +1,6 @@
 import React from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
-import Error404 from "../../pages/Error404/Error404"; 
+// import Error404 from "../../pages/Error404/Error404"; 
 // import ModalLogin from "../../components/Login/ModalLogin";
 
 const Rutas = () => {
@@ -18,10 +18,10 @@ const Rutas = () => {
       */}
 
       {/* Otras rutas */}
-      <Route path="/error404" element={<Error404 />} />
+      {/* <Route path="/error404" element={<Error404 />} /> */}
 
       {/* Redirección para rutas inexistentes */}
-      <Route path="*" element={<Navigate to="/error404" />} />
+      {/* <Route path="*" element={<Navigate to="/error404" />} /> */}
     </Routes>
   );
 };
