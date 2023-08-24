@@ -59,15 +59,32 @@
       "hora": "19:51",
       "plan": "Madurando",
       "id": 6
+    },
+    {
+      "fecha": "2023-08-31",
+      "hora": "15:11",
+      "plan": "Primeros pasos",
+      "id": 7
     }
   ],
-
   "usuarios": [
-
+    {
+      "nombre": "pablo",
+      "apellido": "decima",
+      "correo": "pablo@pablo.com",
+      "telefono": "123",
+      "contraseña": "pablo",
+      "id": 1
+    }
   ],
-
   "mascotas": [
-  
-     
+    {
+      "nombre": "coco",
+      "sexo": "hembra",
+      "edad": 4,
+      "especie": "gato",
+      "raza": "peluda",
+      "id": 1
+    }
   ]
 }

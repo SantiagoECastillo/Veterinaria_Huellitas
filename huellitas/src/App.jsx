@@ -3,9 +3,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import ProductosContexto from './components/context/ProductosContext';
 import Productos from './components/productos/Productos';
 import Rutas from './components/rutas/rutas';
-import  ContextoTurnos  from './components/context/TurnosContext';
-import  ContextoMascotas  from './components/context/MascotasContext';
-import  ContextoUsuarios  from './components/context/UsuariosContext';
+import ContextoTurnos from './components/context/TurnosContext';
+import ContextoMascotas from './components/context/MascotasContext';
+import ContextoUsuarios from './components/context/UsuariosContext';
 
 
 
@@ -14,15 +14,15 @@ const App = () => {
     <>
 
 
-
-
-      <ContextoTurnos>
-
-        <ProductosContexto>
-          <Rutas />
-          {/* <Productos /> */}
-        </ProductosContexto>
-      </ContextoTurnos>
+      <ContextoMascotas>
+        <ContextoUsuarios>
+          <ContextoTurnos>
+            <ProductosContexto>
+              <Rutas />
+            </ProductosContexto>
+          </ContextoTurnos>
+        </ContextoUsuarios>
+      </ContextoMascotas>
 
 
     </>
