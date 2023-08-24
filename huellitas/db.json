@@ -1,93 +1,84 @@
 {
   "usuarios": [
+  ],
+
+  "productos": [
     {
-      "nombre": "sanitago",
-      "apellido": "castillo",
-      "correo": "s@gmail.com",
-      "contrasena": "123",
-      "telefono": "12345",
+      "marca": "Royal canin",
+      "tipo": "Alimento",
+      "precio": "30.000",
+      "img": "/src/images/productos/alimentos.png",
       "id": 1
     },
     {
-      "nombre": "test1",
-      "apellido": "test1",
-      "correo": "test@gmaill.com",
-      "contrasena": "123456789",
-      "confirmarContrasena": "123456789",
-      "telefono": "123456789",
+      "marca": "K-9",
+      "tipo": "Cucha Mascotas",
+      "precio": "50.000",
+      "img": "/src/images/productos/cuchaMascotas.jpg",
       "id": 2
     },
     {
-      "nombre": "test2",
-      "apellido": "test2",
-      "correo": "test2@gmaill.com",
-      "contrasena": "123456789",
-      "confirmarContrasena": "123456789",
-      "telefono": "123456789",
+      "marca": "K-9",
+      "tipo": "Funda Mascotas",
+      "precio": "15.000",
+      "img": "/src/images/productos/fundaMascotas.jpg",
       "id": 3
     },
     {
-      "nombre": "test3",
-      "apellido": "test3",
-      "correo": "test3@g.com",
-      "contrasena": "123456789",
-      "confirmarContrasena": "123456789",
-      "telefono": "1234567",
+      "marca": "Kong",
+      "tipo": "Juguete",
+      "precio": "10.000",
+      "img": "/src/images/productos/huesoKong.jpg",
+      "id": 4
+    }
+  ],
+  "turnos": [
+    {
+      "fecha": "2023-08-23",
+      "hora": "08:19",
+      "plan": "Primeros pasos",
+      "id": 1
+    },
+    {
+      "fecha": "2023-08-31",
+      "hora": "08:30",
+      "plan": "Madurando",
+      "id": 3
+    },
+    {
+      "fecha": "2023-08-31",
+      "hora": "00:42",
+      "plan": "Madurando",
       "id": 4
     },
     {
-      "nombre": "test4",
-      "apellido": "test4",
-      "correo": "test4@g.com",
-      "contrasena": "123456789",
-      "confirmarContrasena": "123456789",
-      "telefono": "123456789",
+      "fecha": "2023-08-24",
+      "hora": "09:36",
+      "plan": "Primeros pasos",
       "id": 5
     },
     {
-      "nombre": "test5",
-      "apellido": "test5",
-      "correo": "test5@g.com",
-      "contrasena": "123456789",
-      "confirmarContrasena": "123456789",
-      "telefono": "123456789",
+      "fecha": "2023-08-30",
+      "hora": "19:51",
+      "plan": "Madurando",
       "id": 6
     },
     {
-      "nombre": "test5",
-      "apellido": "test5",
-      "correo": "test6@g.com",
-      "contrasena": "123456789",
-      "confirmarContrasena": "123456789",
-      "telefono": "123456789",
+      "fecha": "2023-08-31",
+      "hora": "15:11",
+      "plan": "Primeros pasos",
       "id": 7
-    },
+    }
+  ],
+
+  "mascotas": [
     {
-      "nombre": "test8",
-      "apellido": "test8",
-      "correo": "test8@g.com",
-      "contrasena": "123456789",
-      "confirmarContrasena": "123456789",
-      "telefono": "123456789",
-      "id": 8
-    },
-    {
-      "nombre": "test10",
-      "apellido": "test10",
-      "correo": "test10@gmaill.com",
-      "contrasena": "123456789",
-      "confirmarContrasena": "123456789",
-      "telefono": "123456789",
-      "id": 9
-    },
-    {
-      "nombre": "test12",
-      "apellido": "test12",
-      "correo": "test12@gmail.com",
-      "contrasena": "123456789",
-      "confirmarContrasena": "123456789",
-      "telefono": "123456789",
-      "id": 10
+      "nombre": "coco",
+      "sexo": "hembra",
+      "edad": 4,
+      "especie": "gato",
+      "raza": "peluda",
+      "id": 1
     }
   ]
 }
