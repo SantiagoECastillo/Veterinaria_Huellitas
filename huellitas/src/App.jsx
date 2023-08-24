@@ -6,6 +6,9 @@ import ContextoUsuarios from './components/context/UsuariosContext';
 import { useState } from 'react'
 import React, { useLayoutEffect } from "react";
 import "./custom.scss";
+import "./App.css";
+import Rutas from "./components/rutas/rutas/Rutas";
+import MisMascotas from "./pages/MisMascotas/MisMascotas";
 import Rutas from "./components/rutas/Rutas";
 import Header from "./components/header/Header";
 import PieDePagina from "./components/pieDePagina/PieDePagina";
@@ -17,6 +20,7 @@ const App = () => {
   }, []);
 
   return (
+
     <>
 
       <ContextoMascotas>
@@ -24,6 +28,7 @@ const App = () => {
           <ContextoTurnos>
             <ProductosContexto>
               <Header />
+              <MisMascotas />
               <Rutas />
               <PieDePagina />
             </ProductosContexto>
