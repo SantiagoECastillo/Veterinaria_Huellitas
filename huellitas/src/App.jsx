@@ -13,6 +13,7 @@ import Rutas from "./components/rutas/Rutas";
 import Header from "./components/header/Header";
 import PieDePagina from "./components/pieDePagina/PieDePagina";
 import Productos from './components/productos/Productos';
+import Error404 from "./Pages/Error404/Error404"
 
 const App = () => {
   useLayoutEffect(() => {
