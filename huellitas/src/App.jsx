@@ -1,3 +1,5 @@
+import Formulario from "./components/formulario/Formulario";
+import FormularioContacto from "./pages/paginaContacto/FormularioContacto";
 import { useState } from 'react'
 import UsuariosContexto from './Context/UsuariosContexto';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -20,7 +22,6 @@ const App = () => {
   }, []);
 
 
-
   return (
 
     <>
@@ -34,6 +35,8 @@ const App = () => {
                 <Header />
                 <PaginaPrincipal />
                 <Rutas />
+                <Formulario/>
+                 <FormularioContacto/>
 
                 <PieDePagina />
               </ProductosContexto>
