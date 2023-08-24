@@ -1,6 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ProductosContexto from './components/context/ProductosContext';
-import Productos from './components/productos/Productos';
 import ContextoTurnos from './components/context/TurnosContext';
 import ContextoMascotas from './components/context/MascotasContext';
 import ContextoUsuarios from './components/context/UsuariosContext';
@@ -10,6 +9,7 @@ import "./custom.scss";
 import Rutas from "./components/rutas/Rutas";
 import Header from "./components/header/Header";
 import PieDePagina from "./components/pieDePagina/PieDePagina";
+import Productos from './components/productos/Productos';
 
 const App = () => {
   useLayoutEffect(() => {
@@ -18,8 +18,6 @@ const App = () => {
 
   return (
     <>
-
-
 
       <ContextoMascotas>
         <ContextoUsuarios>
@@ -35,9 +33,6 @@ const App = () => {
 
     </>
 
-      
-    
-    
   );
 };
 
